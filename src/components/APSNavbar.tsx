@@ -11,9 +11,16 @@ const services = [
   { label: "Soins à domicile & IoT",      href: "/services/iot",            icon: Package,   color: "#1A3F7A" },
 ];
 
+const navLinks = [
+  { label: "À propos",    href: "/a-propos"        },
+  { label: "Santé mentale", href: "/sante-mentale" },
+  { label: "Technologie", href: "/technologie"     },
+  { label: "Partenaires", href: "/partenaires"     },
+];
+
 export default function APSNavbar() {
-  const [scrolled, setScrolled]       = useState(false);
-  const [mobileOpen, setMobileOpen]   = useState(false);
+  const [scrolled, setScrolled]         = useState(false);
+  const [mobileOpen, setMobileOpen]     = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [location] = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -33,12 +40,10 @@ export default function APSNavbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const scrollTo = (anchor: string) => {
+  useEffect(() => {
     setMobileOpen(false);
-    const el = document.getElementById(anchor);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    else { window.location.href = `/#${anchor}`; }
-  };
+    setServicesOpen(false);
+  }, [location]);
 
   return (
     <nav
@@ -75,7 +80,7 @@ export default function APSNavbar() {
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
                 className="flex items-center gap-1 px-3 py-2 text-sm font-semibold rounded-md transition-all duration-150"
-                style={{ color: location.startsWith("/services") ? "#0EA5AA" : "#3A5A60" }}
+                style={{ color: location.startsWith("/services") ? "#0EA5AA" : "#3A5A60", background: "none", border: "none", cursor: "pointer" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0EA5AA"; (e.currentTarget as HTMLElement).style.background = "#EFF9FA"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = location.startsWith("/services") ? "#0EA5AA" : "#3A5A60"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
               >
@@ -107,29 +112,30 @@ export default function APSNavbar() {
                     ))}
                   </div>
                   <div className="px-4 py-3 border-t" style={{ borderColor: "#E0EAF4", background: "#F5F9FF" }}>
-                    <button onClick={() => { setServicesOpen(false); scrollTo("services"); }} className="text-xs font-semibold flex items-center gap-1" style={{ color: "#0EA5AA", background: "none", border: "none", cursor: "pointer" }}>
+                    <Link
+                      href="/services"
+                      className="text-xs font-semibold flex items-center gap-1 no-underline"
+                      style={{ color: "#0EA5AA" }}
+                      onClick={() => setServicesOpen(false)}
+                    >
                       Voir tous les services →
-                    </button>
+                    </Link>
                   </div>
                 </div>
               )}
             </div>
 
-            {[
-              { label: "Formules",    anchor: "formules"    },
-              { label: "À propos",    anchor: "apropos"     },
-              { label: "Contact",     anchor: "contact"     },
-            ].map((link) => (
-              <button
-                key={link.anchor}
-                onClick={() => scrollTo(link.anchor)}
-                className="px-3 py-2 text-sm font-semibold rounded-md transition-all duration-150"
-                style={{ color: "#3A5A60", background: "none", border: "none", cursor: "pointer" }}
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="px-3 py-2 text-sm font-semibold rounded-md transition-all duration-150 no-underline"
+                style={{ color: location === link.href ? "#0EA5AA" : "#3A5A60" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0EA5AA"; (e.currentTarget as HTMLElement).style.background = "#EFF9FA"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#3A5A60"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = location === link.href ? "#0EA5AA" : "#3A5A60"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -164,6 +170,9 @@ export default function APSNavbar() {
             </Link>
             <div className="px-3 py-2">
               <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#0EA5AA" }}>Services</div>
+              <Link href="/services" className="flex items-center gap-2 px-2 py-2 text-sm rounded-md no-underline font-semibold mb-1" style={{ color: "#1A3F7A" }} onClick={() => setMobileOpen(false)}>
+                Tous les services →
+              </Link>
               {services.map((s) => (
                 <Link key={s.href} href={s.href} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md no-underline" style={{ color: "#3A5A60" }} onClick={() => setMobileOpen(false)}>
                   <s.icon size={14} style={{ color: s.color }} />
@@ -171,14 +180,16 @@ export default function APSNavbar() {
                 </Link>
               ))}
             </div>
-            {[
-              { label: "Formules", anchor: "formules" },
-              { label: "À propos", anchor: "apropos"  },
-              { label: "Contact",  anchor: "contact"  },
-            ].map((link) => (
-              <button key={link.anchor} onClick={() => scrollTo(link.anchor)} className="block w-full text-left px-3 py-2 text-sm font-semibold rounded-md" style={{ color: "#3A5A60", background: "none", border: "none", cursor: "pointer" }}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block px-3 py-2 text-sm font-semibold rounded-md no-underline"
+                style={{ color: "#3A5A60" }}
+                onClick={() => setMobileOpen(false)}
+              >
                 {link.label}
-              </button>
+              </Link>
             ))}
             <div className="pt-3 border-t space-y-2" style={{ borderColor: "#E0EAF4" }}>
               <a href="tel:+18668247828" className="flex items-center gap-2 px-3 py-2 text-sm font-medium no-underline" style={{ color: "#0EA5AA" }}>
