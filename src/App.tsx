@@ -1,5 +1,6 @@
 import { Route, Switch } from "wouter";
 import APSHome from "./pages/APSHome";
+import DevenirPartenaire from "./pages/DevenirPartenaire";
 import {
   APSLivraison,
   APSAccompagnement,
@@ -19,6 +20,7 @@ export default function App() {
       <Route path="/services/residences" component={APSResidences} />
       <Route path="/services/sante-mentale" component={APSSanteMentale} />
       <Route path="/services/iot" component={APSIoT} />
+      <Route path="/devenir-partenaire" component={DevenirPartenaire} />
       {/* Fallback */}
       <Route component={APSHome} />
     </Switch>

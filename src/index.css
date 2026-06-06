@@ -4,31 +4,22 @@
 
 /* ============================================================
    APS QUÉBEC — Design System
-   Philosophy: "Human Proximity Tech" — MedTech sobre, chaleureux
-   Primary: Teal #0D7377 / Orange #F4631E
+   Colors from logo: Navy #1A3F7A + Teal #0EA5AA + Turquoise #3BBFB8
    Fonts: DM Sans (titres) + Outfit (corps)
    ============================================================ */
 
 :root {
-  --aps-teal: #0D7377;
-  --aps-teal-light: #14A8AD;
-  --aps-teal-dark: #0A5A5D;
-  --aps-orange: #F4631E;
-  --aps-orange-light: #F97B3C;
-  --aps-orange-dark: #D4521A;
+  --aps-teal: #0EA5AA;
+  --aps-teal-light: #3BBFB8;
+  --aps-teal-dark: #0A7F84;
+  --aps-navy: #1A3F7A;
+  --aps-navy-light: #2D5799;
   --aps-cream: #FAFAF8;
-  --aps-navy: #1A2E35;
+  --aps-dark: #1A2E35;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: "DM Sans", sans-serif;
@@ -37,17 +28,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── APS Utility Classes ── */
-.aps-section {
-  padding: 5rem 0;
-}
-
-.aps-container {
-  max-width: 1280px;
+/* ── Layout ── */
+.container {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
+.aps-section { padding: 5rem 0; }
+
+@media (max-width: 768px) {
+  .aps-section { padding: 3.5rem 0; }
+}
+
+/* ── Badges ── */
 .aps-badge {
   display: inline-flex;
   align-items: center;
@@ -58,9 +52,9 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: rgba(13, 115, 119, 0.08);
-  color: #0D7377;
-  border: 1px solid rgba(13, 115, 119, 0.15);
+  background: rgba(14, 165, 170, 0.1);
+  color: #0EA5AA;
+  border: 1px solid rgba(14, 165, 170, 0.2);
   margin-bottom: 1.25rem;
 }
 
@@ -69,17 +63,20 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #0D7377;
+  background: #0EA5AA;
 }
 
+/* ── Typography ── */
 .aps-section-title {
   font-family: "DM Sans", sans-serif;
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 800;
   line-height: 1.15;
-  color: #1A2E35;
+  color: #1A3F7A;
   margin-bottom: 1rem;
 }
+
+.aps-section-title span { color: #0EA5AA; }
 
 .aps-section-subtitle {
   font-size: 1.0625rem;
@@ -88,26 +85,28 @@ body {
   max-width: 600px;
 }
 
+/* ── Cards ── */
 .aps-card {
   background: white;
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(13, 115, 119, 0.06);
-  border: 1px solid rgba(13, 115, 119, 0.08);
+  box-shadow: 0 2px 12px rgba(14, 165, 170, 0.07);
+  border: 1px solid rgba(14, 165, 170, 0.1);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .aps-card:hover {
-  box-shadow: 0 8px 28px rgba(13, 115, 119, 0.12);
+  box-shadow: 0 8px 28px rgba(14, 165, 170, 0.14);
   transform: translateY(-2px);
 }
 
+/* ── Buttons ── */
 .aps-btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: #0D7377;
+  background: #1A3F7A;
   color: white;
   font-weight: 700;
   font-size: 0.9375rem;
@@ -119,20 +118,18 @@ body {
 }
 
 .aps-btn-primary:hover {
-  background: #0A5A5D;
-  box-shadow: 0 4px 16px rgba(13, 115, 119, 0.3);
+  background: #2D5799;
+  box-shadow: 0 4px 16px rgba(26, 63, 122, 0.3);
 }
 
-.aps-btn-primary:active {
-  transform: scale(0.97);
-}
+.aps-btn-primary:active { transform: scale(0.97); }
 
-.aps-btn-orange {
+.aps-btn-teal {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: #F4631E;
+  background: #0EA5AA;
   color: white;
   font-weight: 700;
   font-size: 0.9375rem;
@@ -143,14 +140,12 @@ body {
   transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
 }
 
-.aps-btn-orange:hover {
-  background: #D4521A;
-  box-shadow: 0 4px 16px rgba(244, 99, 30, 0.3);
+.aps-btn-teal:hover {
+  background: #0A7F84;
+  box-shadow: 0 4px 16px rgba(14, 165, 170, 0.35);
 }
 
-.aps-btn-orange:active {
-  transform: scale(0.97);
-}
+.aps-btn-teal:active { transform: scale(0.97); }
 
 .aps-btn-outline {
   display: inline-flex;
@@ -158,23 +153,23 @@ body {
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   background: transparent;
-  color: #0D7377;
+  color: #1A3F7A;
   font-weight: 700;
   font-size: 0.9375rem;
   border-radius: 0.625rem;
-  border: 2px solid #0D7377;
+  border: 2px solid #1A3F7A;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.15s ease;
 }
 
 .aps-btn-outline:hover {
-  background: rgba(13, 115, 119, 0.06);
+  background: rgba(26, 63, 122, 0.06);
 }
 
 /* ── Stats bar ── */
 .aps-stats-bar {
-  background: linear-gradient(135deg, #0D7377 0%, #14A8AD 100%);
+  background: linear-gradient(135deg, #1A3F7A 0%, #0EA5AA 100%);
   padding: 2rem 0;
 }
 
@@ -189,24 +184,23 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+.animate-fade-in-up { animation: fadeInUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) both; }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+/* ── Responsive helpers ── */
+@media (max-width: 640px) {
+  .aps-btn-primary, .aps-btn-teal, .aps-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #0D7377; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #0EA5AA; border-radius: 3px; }
 
-/* ── No underline for links ── */
 a.no-underline { text-decoration: none; }
 
-/* ── Video play button ── */
 .aps-play-btn {
   width: 64px;
   height: 64px;

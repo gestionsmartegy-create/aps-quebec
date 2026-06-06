@@ -99,7 +99,7 @@ export default function APSServicePage({
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="/#inscription"
+                  href="/devenir-partenaire"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-semibold transition-all hover:opacity-90 hover:shadow-lg"
@@ -348,7 +348,7 @@ export default function APSServicePage({
           <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">{ctaDescription}</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="/#inscription"
+              href="/devenir-partenaire"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white rounded-lg font-bold text-lg transition-all hover:shadow-xl hover:scale-105"

@@ -9,7 +9,7 @@ import {
 
 /* ============================================================
    APS QUÉBEC — Site complet indépendant
-   Branding: Orange #F4631E + Teal #0D7377 + Cream #FAFAF8
+   Branding: Orange #1A3F7A + Teal #0EA5AA + Cream #FAFAF8
    Style: MedTech sobre, humain, inspiré Trimakus
    ============================================================ */
 
@@ -96,9 +96,9 @@ function HeroSection() {
               }}
             >
               Soutenir la{" "}
-              <span style={{ color: "#0D7377" }}>participation sociale</span>,
+              <span style={{ color: "#0EA5AA" }}>participation sociale</span>,
               le bien-être mental et la{" "}
-              <span style={{ color: "#F4631E" }}>qualité de vie</span>{" "}
+              <span style={{ color: "#1A3F7A" }}>qualité de vie</span>{" "}
               de vos résidents
             </h1>
 
@@ -110,7 +110,7 @@ function HeroSection() {
 
             <div className="flex flex-wrap gap-3 mb-10">
               {["Aucun frais caché", "Partenariat humain", "Santé mentale & participation", "Flexibilité totale"].map((item) => (
-                <div key={item} className="flex items-center gap-1.5 text-sm font-medium" style={{ color: "#0D7377" }}>
+                <div key={item} className="flex items-center gap-1.5 text-sm font-medium" style={{ color: "#0EA5AA" }}>
                   <CheckCircle2 size={15} />
                   {item}
                 </div>
@@ -125,7 +125,7 @@ function HeroSection() {
                 Voir les formules <ArrowRight size={16} />
               </button>
               <a
-                href="#inscription"
+                href="/devenir-partenaire"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="aps-btn-outline"
@@ -160,10 +160,10 @@ function HeroSection() {
               style={{ border: "1px solid #E8F0F1" }}
             >
               <div className="flex items-center gap-2 mb-1">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "#E6F4F5" }}>
-                  <Users size={16} style={{ color: "#0D7377" }} />
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "#EFF9FA" }}>
+                  <Users size={16} style={{ color: "#0EA5AA" }} />
                 </div>
-                <span className="text-xs font-bold" style={{ color: "#0D7377" }}>RI · RPA · RTF</span>
+                <span className="text-xs font-bold" style={{ color: "#0EA5AA" }}>RI · RPA · RTF</span>
               </div>
               <p className="text-xs" style={{ color: "#6B8A90" }}>Types de résidences</p>
             </div>
@@ -173,7 +173,7 @@ function HeroSection() {
               className="absolute -right-4 bottom-12 bg-white rounded-xl p-4 shadow-xl"
               style={{ border: "1px solid #E8F0F1" }}
             >
-              <div className="text-2xl font-black" style={{ color: "#F4631E" }}>6+</div>
+              <div className="text-2xl font-black" style={{ color: "#1A3F7A" }}>6+</div>
               <div className="text-xs font-medium" style={{ color: "#6B8A90" }}>Années d'expertise</div>
             </div>
           </div>
@@ -191,14 +191,14 @@ function StatsBar() {
   const s4 = useCounter(3);
 
   const stats = [
-    { ref: s1.ref, count: s1.count, suffix: "K+", label: "Rendez-vous manqués/an au Québec", color: "#F4631E" },
-    { ref: s2.ref, count: s2.count, suffix: "+", label: "Années d'expertise", color: "#0D7377" },
-    { ref: s3.ref, count: s3.count, suffix: "%", label: "Satisfaction partenaires", color: "#F4631E" },
-    { ref: s4.ref, count: s4.count, suffix: "", label: "Types de résidences (RI, RPA, RTF)", color: "#0D7377" },
+    { ref: s1.ref, count: s1.count, suffix: "K+", label: "Rendez-vous manqués/an au Québec", color: "#1A3F7A" },
+    { ref: s2.ref, count: s2.count, suffix: "+", label: "Années d'expertise", color: "#0EA5AA" },
+    { ref: s3.ref, count: s3.count, suffix: "%", label: "Satisfaction partenaires", color: "#1A3F7A" },
+    { ref: s4.ref, count: s4.count, suffix: "", label: "Types de résidences (RI, RPA, RTF)", color: "#0EA5AA" },
   ];
 
   return (
-    <div style={{ background: "#0D7377" }}>
+    <div style={{ background: "#0EA5AA" }}>
       <div className="container">
         <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/20">
           {stats.map((s, i) => (
@@ -222,7 +222,7 @@ const services = [
     title: "Livraison Last-Mile",
     desc: "Livraison de médicaments avec traçabilité complète, preuve d'exécution numérique et coordination avec vos pharmacies partenaires.",
     img: IMAGES.delivery,
-    color: "#0D7377",
+    color: "#0EA5AA",
     link: "/aps/services/livraison",
   },
   {
@@ -230,7 +230,7 @@ const services = [
     title: "Accompagnement patient",
     desc: "Nos agents accompagnent les résidents à leurs rendez-vous médicaux pour réduire les no-shows et sécuriser les transports.",
     img: IMAGES.accompaniment,
-    color: "#F4631E",
+    color: "#1A3F7A",
     link: "/aps/services/accompagnement",
   },
   {
@@ -238,7 +238,7 @@ const services = [
     title: "Soutien à la sortie d'hôpital",
     desc: "Accompagnement du patient depuis la sortie jusqu'au retour à domicile, en résidence ou en ressource intermédiaire.",
     img: IMAGES.accompaniment,
-    color: "#0D7377",
+    color: "#0EA5AA",
     link: "/aps/services/sortie-hopital",
   },
   {
@@ -246,7 +246,7 @@ const services = [
     title: "Services RI / RTF / RPA",
     desc: "Sorties récréatives, participation sociale et accompagnement assisté pour améliorer la qualité de vie des résidents.",
     img: IMAGES.social,
-    color: "#F4631E",
+    color: "#1A3F7A",
     link: "/aps/services/residences",
   },
   {
@@ -254,7 +254,7 @@ const services = [
     title: "Santé mentale & bien-être",
     desc: "Visites régulières pour réduire l'isolement, détecter les risques précocement et maintenir le lien social des résidents.",
     img: IMAGES.social,
-    color: "#0D7377",
+    color: "#0EA5AA",
     link: "/aps/services/sante-mentale",
   },
   {
@@ -262,7 +262,7 @@ const services = [
     title: "Soins à domicile & IoT",
     desc: "Intégration d'appareils de surveillance connectés, alertes en temps réel et visibilité pour les familles et partenaires.",
     img: IMAGES.tech,
-    color: "#F4631E",
+    color: "#1A3F7A",
     link: "/aps/services/iot",
   },
 ];
@@ -338,14 +338,14 @@ function MissionSection() {
             {/* Decorative block */}
             <div
               className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl"
-              style={{ background: "linear-gradient(135deg, #0D7377, #14A8AD)", opacity: 0.15 }}
+              style={{ background: "linear-gradient(135deg, #0EA5AA, #3BBFB8)", opacity: 0.15 }}
             />
             {/* Stat card */}
             <div
               className="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-xl"
               style={{ border: "1px solid #E8F0F1" }}
             >
-              <div className="text-2xl font-black" style={{ color: "#0D7377" }}>400K+</div>
+              <div className="text-2xl font-black" style={{ color: "#0EA5AA" }}>400K+</div>
               <div className="text-xs" style={{ color: "#6B8A90" }}>Rendez-vous manqués/an<br />au Québec</div>
             </div>
           </div>
@@ -374,8 +374,8 @@ function MissionSection() {
                 { value: "88%", label: "Cohérence du soutien" },
                 { value: "92%", label: "Présence communautaire" },
               ].map((item) => (
-                <div key={item.label} className="text-center p-4 rounded-xl" style={{ background: "#E6F4F5" }}>
-                  <div className="text-xl font-black mb-1" style={{ color: "#0D7377" }}>{item.value}</div>
+                <div key={item.label} className="text-center p-4 rounded-xl" style={{ background: "#EFF9FA" }}>
+                  <div className="text-xl font-black mb-1" style={{ color: "#0EA5AA" }}>{item.value}</div>
                   <div className="text-xs" style={{ color: "#5A7A82" }}>{item.label}</div>
                 </div>
               ))}
@@ -391,7 +391,7 @@ function MissionSection() {
 const formules = [
   {
     name: "Bronze",
-    emoji: "🥉",
+    tier: 1,
     tag: "APS PARTENAIRE",
     popular: false,
     price: "0$",
@@ -411,15 +411,15 @@ const formules = [
   },
   {
     name: "Or",
-    emoji: "🥇",
+    tier: 2,
     tag: "APS PARTENAIRE",
     popular: true,
     price: "0$",
     period: "/ mois",
     base: "2$ / mois",
-    color: "#0D7377",
-    bg: "#0D7377",
-    border: "#0D7377",
+    color: "#0EA5AA",
+    bg: "#0EA5AA",
+    border: "#0EA5AA",
     btnClass: "aps-btn-primary",
     features: [
       "Tout ce qui est inclus dans Bronze",
@@ -436,7 +436,7 @@ const formules = [
   },
   {
     name: "Argent",
-    emoji: "🥈",
+    tier: 3,
     tag: "APS PARTENAIRE",
     popular: false,
     price: "0$",
@@ -479,7 +479,7 @@ function FormulesSection() {
               className="px-5 py-2 text-sm font-semibold rounded-md transition-all"
               style={{
                 background: billing === "mensuel" ? "white" : "transparent",
-                color: billing === "mensuel" ? "#0D7377" : "#6B8A90",
+                color: billing === "mensuel" ? "#0EA5AA" : "#6B8A90",
                 boxShadow: billing === "mensuel" ? "0 1px 4px rgba(0,0,0,0.1)" : "none",
               }}
             >
@@ -490,14 +490,14 @@ function FormulesSection() {
               className="px-5 py-2 text-sm font-semibold rounded-md transition-all flex items-center gap-2"
               style={{
                 background: billing === "annuel" ? "white" : "transparent",
-                color: billing === "annuel" ? "#0D7377" : "#6B8A90",
+                color: billing === "annuel" ? "#0EA5AA" : "#6B8A90",
                 boxShadow: billing === "annuel" ? "0 1px 4px rgba(0,0,0,0.1)" : "none",
               }}
             >
               Annuel
               <span
                 className="text-xs font-bold px-1.5 py-0.5 rounded"
-                style={{ background: "#F4631E", color: "white" }}
+                style={{ background: "#1A3F7A", color: "white" }}
               >
                 -20%
               </span>
@@ -525,7 +525,7 @@ function FormulesSection() {
               {f.popular && (
                 <div
                   className="absolute top-0 left-0 right-0 py-2 text-center text-xs font-bold tracking-wider"
-                  style={{ background: "#F4631E", color: "white" }}
+                  style={{ background: "#1A3F7A", color: "white" }}
                 >
                   LE PLUS POPULAIRE
                 </div>
@@ -536,7 +536,7 @@ function FormulesSection() {
                   {f.tag}
                 </div>
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-2xl">{f.emoji}</span>
+                  
                   <span
                     className="text-2xl font-black"
                     style={{ color: f.popular ? "white" : "#1A2E35", fontFamily: "'DM Sans', sans-serif" }}
@@ -563,7 +563,7 @@ function FormulesSection() {
                       <CheckCircle2
                         size={15}
                         className="flex-shrink-0 mt-0.5"
-                        style={{ color: f.popular ? "#7ECDD0" : "#0D7377" }}
+                        style={{ color: f.popular ? "#7ECDD0" : "#0EA5AA" }}
                       />
                       <span style={{ color: f.popular ? "rgba(255,255,255,0.85)" : "#4A6670" }}>{feat}</span>
                     </li>
@@ -571,25 +571,25 @@ function FormulesSection() {
                 </ul>
 
                 <a
-                  href="#inscription"
+                  href="/devenir-partenaire"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center py-3 px-6 rounded-lg font-semibold text-sm transition-all duration-200"
                   style={
                     f.popular
-                      ? { background: "#F4631E", color: "white" }
-                      : { background: "#E6F4F5", color: "#0D7377", border: "1px solid #B3DDE0" }
+                      ? { background: "#1A3F7A", color: "white" }
+                      : { background: "#EFF9FA", color: "#0EA5AA", border: "1px solid #B8D8E8" }
                   }
                   onMouseEnter={(e) => {
                     if (!f.popular) {
-                      (e.currentTarget as HTMLElement).style.background = "#0D7377";
+                      (e.currentTarget as HTMLElement).style.background = "#0EA5AA";
                       (e.currentTarget as HTMLElement).style.color = "white";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!f.popular) {
-                      (e.currentTarget as HTMLElement).style.background = "#E6F4F5";
-                      (e.currentTarget as HTMLElement).style.color = "#0D7377";
+                      (e.currentTarget as HTMLElement).style.background = "#EFF9FA";
+                      (e.currentTarget as HTMLElement).style.color = "#0EA5AA";
                     }
                   }}
                 >
@@ -609,8 +609,8 @@ function FormulesSection() {
             { icon: Zap, label: "Flexibilité totale", sub: "Adaptez votre formule à tout moment" },
           ].map((item) => (
             <div key={item.label} className="text-center p-4 rounded-xl bg-white" style={{ border: "1px solid #E8F0F1" }}>
-              <div className="w-10 h-10 rounded-lg mx-auto mb-3 flex items-center justify-center" style={{ background: "#E6F4F5" }}>
-                <item.icon size={18} style={{ color: "#0D7377" }} />
+              <div className="w-10 h-10 rounded-lg mx-auto mb-3 flex items-center justify-center" style={{ background: "#EFF9FA" }}>
+                <item.icon size={18} style={{ color: "#0EA5AA" }} />
               </div>
               <div className="text-sm font-bold mb-1" style={{ color: "#1A2E35" }}>{item.label}</div>
               <div className="text-xs" style={{ color: "#6B8A90" }}>{item.sub}</div>
@@ -700,7 +700,7 @@ function InscriptionSection() {
             <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8" style={{ border: "1px solid #E8F0F1", boxShadow: "0 4px 24px rgba(13,115,119,0.08)" }}>
               {/* Responsable */}
               <div className="mb-6">
-                <h3 className="text-sm font-bold uppercase tracking-wider mb-4 pb-2" style={{ color: "#0D7377", borderBottom: "2px solid #E6F4F5" }}>
+                <h3 className="text-sm font-bold uppercase tracking-wider mb-4 pb-2" style={{ color: "#0EA5AA", borderBottom: "2px solid #EFF9FA" }}>
                   Responsable
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
@@ -725,7 +725,7 @@ function InscriptionSection() {
 
               {/* Ressource */}
               <div className="mb-6">
-                <h3 className="text-sm font-bold uppercase tracking-wider mb-4 pb-2" style={{ color: "#0D7377", borderBottom: "2px solid #E6F4F5" }}>
+                <h3 className="text-sm font-bold uppercase tracking-wider mb-4 pb-2" style={{ color: "#0EA5AA", borderBottom: "2px solid #EFF9FA" }}>
                   Ressource / Résidence
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
@@ -745,7 +745,7 @@ function InscriptionSection() {
 
               {/* Adresse */}
               <div className="mb-6">
-                <h3 className="text-sm font-bold uppercase tracking-wider mb-4 pb-2" style={{ color: "#0D7377", borderBottom: "2px solid #E6F4F5" }}>
+                <h3 className="text-sm font-bold uppercase tracking-wider mb-4 pb-2" style={{ color: "#0EA5AA", borderBottom: "2px solid #EFF9FA" }}>
                   Adresse
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
@@ -794,10 +794,10 @@ function InscriptionSection() {
               </div>
               <div
                 className="rounded-xl p-4 mb-4"
-                style={{ background: selectedFormule === 1 ? "#0D7377" : "#F4F9F9", border: "1px solid #E8F0F1" }}
+                style={{ background: selectedFormule === 1 ? "#0EA5AA" : "#F4F9F9", border: "1px solid #E8F0F1" }}
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">{formules[selectedFormule].emoji}</span>
+                  
                   <span className="font-black" style={{ color: selectedFormule === 1 ? "white" : "#1A2E35" }}>
                     APS Partenaire {formules[selectedFormule].name}
                   </span>
@@ -805,14 +805,14 @@ function InscriptionSection() {
                 <ul className="space-y-1.5">
                   {formules[selectedFormule].features.slice(0, 5).map((f, i) => (
                     <li key={i} className="flex items-start gap-2 text-xs">
-                      <CheckCircle2 size={12} className="flex-shrink-0 mt-0.5" style={{ color: selectedFormule === 1 ? "#7ECDD0" : "#0D7377" }} />
+                      <CheckCircle2 size={12} className="flex-shrink-0 mt-0.5" style={{ color: selectedFormule === 1 ? "#7ECDD0" : "#0EA5AA" }} />
                       <span style={{ color: selectedFormule === 1 ? "rgba(255,255,255,0.8)" : "#5A7A82" }}>{f}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-3 pt-3" style={{ borderTop: `1px solid ${selectedFormule === 1 ? "rgba(255,255,255,0.2)" : "#E8F0F1"}` }}>
                   <div className="text-xs" style={{ color: selectedFormule === 1 ? "rgba(255,255,255,0.6)" : "#9BAFB5" }}>Frais de base</div>
-                  <div className="text-lg font-black" style={{ color: selectedFormule === 1 ? "white" : "#F4631E" }}>2$ / mois</div>
+                  <div className="text-lg font-black" style={{ color: selectedFormule === 1 ? "white" : "#1A3F7A" }}>2$ / mois</div>
                 </div>
               </div>
 
@@ -824,12 +824,12 @@ function InscriptionSection() {
                     onClick={() => setSelectedFormule(i)}
                     className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium transition-all text-left"
                     style={{
-                      background: selectedFormule === i ? "#E6F4F5" : "transparent",
-                      color: selectedFormule === i ? "#0D7377" : "#6B8A90",
-                      border: `1px solid ${selectedFormule === i ? "#B3DDE0" : "#E8F0F1"}`,
+                      background: selectedFormule === i ? "#EFF9FA" : "transparent",
+                      color: selectedFormule === i ? "#0EA5AA" : "#6B8A90",
+                      border: `1px solid ${selectedFormule === i ? "#B8D8E8" : "#E8F0F1"}`,
                     }}
                   >
-                    <span>{f.emoji}</span>
+                    
                     APS Partenaire {f.name}
                   </button>
                 ))}
@@ -843,13 +843,14 @@ function InscriptionSection() {
 }
 
 // ─── TECHNOLOGIE SECTION ─────────────────────────────────────
+import { Smartphone, Stethoscope, Pill, Building2, BarChart2, Link2 } from "lucide-react";
 const techItems = [
-  { icon: "📱", title: "App Patient", desc: "Demandes de service, suivi de mission, notifications et visibilité pour les proches aidants autorisés." },
-  { icon: "🧑‍⚕️", title: "App HPA", desc: "Dispatch de mission, preuve d'exécution, notes, statut, chaîne de custody et escalade." },
-  { icon: "💊", title: "Portail Pharmacie", desc: "Coordination des commandes, livraisons, preuves et suivis avec vos pharmacies partenaires." },
-  { icon: "🏥", title: "Portail Partenaire", desc: "Vue opérationnelle pour résidences, soins à domicile, corridors cliniques et partenaires institutionnels." },
-  { icon: "📊", title: "Tableaux de bord", desc: "Indicateurs de performance, volumes, délais, exceptions, satisfaction, conformité et impact." },
-  { icon: "🔗", title: "Intégrations", desc: "Standards HL7/FHIR, APIs et intégration progressive avec vos systèmes existants." },
+  { Icon: Smartphone, title: "App Patient",        desc: "Demandes de service, suivi de mission, notifications et visibilité pour les proches aidants autorisés." },
+  { Icon: Stethoscope, title: "App HPA",           desc: "Dispatch de mission, preuve d'exécution, notes, statut, chaîne de custody et escalade." },
+  { Icon: Pill,        title: "Portail Pharmacie", desc: "Coordination des commandes, livraisons, preuves et suivis avec vos pharmacies partenaires." },
+  { Icon: Building2,   title: "Portail Partenaire",desc: "Vue opérationnelle pour résidences, soins à domicile, corridors cliniques et partenaires institutionnels." },
+  { Icon: BarChart2,   title: "Tableaux de bord",  desc: "Indicateurs de performance, volumes, délais, exceptions, satisfaction, conformité et impact." },
+  { Icon: Link2,       title: "Intégrations",      desc: "Standards HL7/FHIR, APIs et intégration progressive avec vos systèmes existants." },
 ];
 
 function TechSection() {
@@ -858,7 +859,7 @@ function TechSection() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="aps-section-label mb-3">Propulsé par Vaistat Technology</div>
+            <div className="aps-section-label mb-3">Technologie APS</div>
             <h2 className="aps-section-title mb-4">
               La technologie qui rend la<br />proximité <span>scalable et opérable</span>
             </h2>
@@ -872,14 +873,9 @@ function TechSection() {
               portail pharmacie, portails partenaires, tableaux de bord, preuves d'exécution,
               rapports et intégrations.
             </p>
-            <a
-              href="https://vaistat.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="aps-btn-primary"
-            >
-              En savoir plus sur Vaistat <ArrowRight size={16} />
-            </a>
+            <Link href="/devenir-partenaire" className="aps-btn-primary no-underline">
+              Devenir partenaire <ArrowRight size={16} />
+            </Link>
           </div>
 
           <div>
@@ -889,8 +885,10 @@ function TechSection() {
             <div className="grid grid-cols-2 gap-3">
               {techItems.map((item, i) => (
                 <div key={i} className="aps-card p-4">
-                  <div className="text-2xl mb-2">{item.icon}</div>
-                  <div className="text-sm font-bold mb-1" style={{ color: "#1A2E35" }}>{item.title}</div>
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-2" style={{ background: "#EFF9FA" }}>
+                    <item.Icon size={18} style={{ color: "#0EA5AA" }} />
+                  </div>
+                  <div className="text-sm font-bold mb-1" style={{ color: "#1A3F7A" }}>{item.title}</div>
                   <div className="text-xs leading-relaxed" style={{ color: "#6B8A90" }}>{item.desc}</div>
                 </div>
               ))}
@@ -908,19 +906,19 @@ const testimonials = [
     quote: "Les agents de proximité d'APS Québec ont été une bouée de sauvetage pour mon père. Leur service d'accompagnement a fait en sorte qu'il ne manque plus jamais un rendez-vous médical.",
     author: "Sarah L.",
     role: "Proche aidante",
-    color: "#0D7377",
+    color: "#0EA5AA",
   },
   {
     quote: "Les transitions depuis l'hôpital peuvent être fragmentées et stressantes, mais APS Québec a rendu le processus sans accroc. Ils ont tout coordonné, du transport à la préparation des médicaments.",
     author: "Jean-Philippe M.",
     role: "Patient en convalescence",
-    color: "#F4631E",
+    color: "#1A3F7A",
   },
   {
     quote: "Notre résidence a rejoint le programme APS Partenaire Or et la différence est remarquable. Nos résidents participent davantage aux activités sociales et leur bien-être s'est nettement amélioré.",
     author: "Directrice, Résidence Les Érables",
     role: "Partenaire institutionnel",
-    color: "#0D7377",
+    color: "#0EA5AA",
   },
 ];
 
@@ -997,11 +995,11 @@ function ContactSection() {
                   href={item.href}
                   className="flex items-center gap-4 p-4 rounded-xl transition-all group no-underline"
                   style={{ border: "1px solid #E8F0F1", background: "white" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#B3DDE0")}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#B8D8E8")}
                   onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#E8F0F1")}
                 >
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: "#E6F4F5" }}>
-                    <item.icon size={18} style={{ color: "#0D7377" }} />
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: "#EFF9FA" }}>
+                    <item.icon size={18} style={{ color: "#0EA5AA" }} />
                   </div>
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#9BAFB5" }}>{item.label}</div>
@@ -1018,7 +1016,7 @@ function ContactSection() {
             </div>
             <div
               className="mt-6 rounded-2xl p-6 text-center"
-              style={{ background: "linear-gradient(135deg, #0D7377, #14A8AD)" }}
+              style={{ background: "linear-gradient(135deg, #0EA5AA, #3BBFB8)" }}
             >
               <div className="text-white font-bold text-lg mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 Prêt à démarrer ?
@@ -1027,15 +1025,15 @@ function ContactSection() {
                 Créez votre compte APS Connect et accédez à votre espace partenaire en quelques minutes.
               </p>
               <a
-                href="#inscription"
+                href="/devenir-partenaire"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white font-semibold text-sm px-6 py-3 rounded-lg transition-all"
-                style={{ color: "#0D7377" }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#F4631E") && (e.currentTarget.style.color = "white")}
+                style={{ color: "#0EA5AA" }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#1A3F7A") && (e.currentTarget.style.color = "white")}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.background = "white";
-                  (e.currentTarget as HTMLElement).style.color = "#0D7377";
+                  (e.currentTarget as HTMLElement).style.color = "#0EA5AA";
                 }}
               >
                 Créer mon compte APS <ArrowRight size={16} />
@@ -1051,19 +1049,13 @@ function ContactSection() {
 // ─── FOOTER ──────────────────────────────────────────────────
 function APSFooter() {
   return (
-    <footer style={{ background: "#0D7377" }}>
+    <footer style={{ background: "#0EA5AA" }}>
       <div className="container py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center font-black text-sm" style={{ background: "rgba(255,255,255,0.15)", color: "white" }}>
-                APS
-              </div>
-              <div>
-                <div className="font-black text-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>APS Québec</div>
-                <div className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>Powered by Vaistat</div>
-              </div>
+              <img src="/LogoAPS.png" alt="APS Québec" style={{ height: "40px", width: "auto", filter: "brightness(0) invert(1)", opacity: 0.9 }} />
             </div>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.7)" }}>
               Agents de Proximité Santé — Recréer le lien humain dans le système de santé québécois.
@@ -1073,7 +1065,7 @@ function APSFooter() {
               {["F", "I", "L"].map((s) => (
                 <a key={s} href="#" className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold transition-all"
                   style={{ background: "rgba(255,255,255,0.15)", color: "white" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "#F4631E")}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "#1A3F7A")}
                   onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
                 >
                   {s}
@@ -1109,11 +1101,11 @@ function APSFooter() {
               <li><span className="text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>Lun–Sam : 8h–17h</span></li>
             </ul>
             <a
-              href="#inscription"
+              href="/devenir-partenaire"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-4 text-sm font-semibold px-4 py-2.5 rounded-lg transition-all"
-              style={{ background: "#F4631E", color: "white" }}
+              style={{ background: "#1A3F7A", color: "white" }}
             >
               Créer mon compte APS
             </a>
@@ -1122,21 +1114,19 @@ function APSFooter() {
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}>
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-            © 2025 APS Québec. Tous droits réservés.
+            © 2026 APS Québec — Made with ♥ by{" "}
+            <a href="https://smartegy.ca" target="_blank" rel="noopener noreferrer" style={{ color: "#3BBFB8", textDecoration: "none" }}>smartegy.ca</a>
           </p>
           <div className="flex gap-4">
             {["Politique de confidentialité", "Conditions d'utilisation"].map((item) => (
-              <a key={item} href="#" className="text-xs no-underline transition-colors" style={{ color: "rgba(255,255,255,0.5)" }}
+              <a key={item} href="#" className="text-xs no-underline transition-colors" style={{ color: "rgba(255,255,255,0.4)" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}
               >
                 {item}
               </a>
             ))}
           </div>
-          <a href="https://vaistat.com" target="_blank" rel="noopener noreferrer" className="text-xs no-underline" style={{ color: "rgba(255,255,255,0.5)" }}>
-            Vaistat Technology
-          </a>
         </div>
       </div>
     </footer>
