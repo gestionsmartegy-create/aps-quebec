@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APS Québec — Agents de Proximité Santé</title>
-    <meta name="description" content="Programme Partenaire APS Québec — Soutenir la participation sociale, le bien-être mental et la qualité de vie de vos résidents RI, RPA et RTF." />
+    <title>APS Québec | Agents de Proximité en Santé propulsés par Vaistat</title>
+    <meta name="description" content="APS Québec déploie des Agents de Proximité en Santé pour soutenir la continuité des soins : décharge hospitalière, accompagnement médical, livraison de médicaments, prélèvements, visites de suivi et monitoring connecté." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -13,6 +13,25 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- Netlify Forms detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nom" />
+      <input type="text" name="organisation" />
+      <input type="text" name="titre" />
+      <input type="email" name="email" />
+      <input type="tel" name="tel" />
+      <input type="text" name="typeOrganisation" />
+      <input type="text" name="sujet" />
+      <textarea name="message"></textarea>
+    </form>
+    <form name="candidature-aps" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="prenom" />
+      <input type="text" name="nom" />
+      <input type="email" name="email" />
+      <input type="tel" name="tel" />
+      <input type="text" name="ville" />
+      <input type="text" name="disponibilite" />
+      <textarea name="message"></textarea>
+    </form>
     <form name="devenir-partenaire" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="forfait" />
       <input type="text" name="prenom" />

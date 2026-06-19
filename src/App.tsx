@@ -1,36 +1,29 @@
 import { Route, Switch } from "wouter";
 import APSHome from "./pages/APSHome";
-import DevenirPartenaire from "./pages/DevenirPartenaire";
-import APropos from "./pages/APropos";
 import ServicesPage from "./pages/ServicesPage";
-import SanteMentale from "./pages/SanteMentale";
+import PourQui from "./pages/PourQui";
 import Technologie from "./pages/Technologie";
+import DevenirAPS from "./pages/DevenirAPS";
 import Partenaires from "./pages/Partenaires";
-import {
-  APSLivraison,
-  APSAccompagnement,
-  APSSortieHopital,
-  APSResidences,
-  APSSanteMentale,
-  APSIoT,
-} from "./pages/APSServices";
+import APropos from "./pages/APropos";
+import Contact from "./pages/Contact";
+import DevenirPartenaire from "./pages/DevenirPartenaire";
+import SanteMentale from "./pages/SanteMentale";
 
 export default function App() {
   return (
     <Switch>
       <Route path="/" component={APSHome} />
-      <Route path="/a-propos" component={APropos} />
       <Route path="/services" component={ServicesPage} />
-      <Route path="/sante-mentale" component={SanteMentale} />
+      <Route path="/pour-qui" component={PourQui} />
       <Route path="/technologie" component={Technologie} />
-      <Route path="/partenaires" component={Partenaires} />
-      <Route path="/services/livraison" component={APSLivraison} />
-      <Route path="/services/accompagnement" component={APSAccompagnement} />
-      <Route path="/services/sortie-hopital" component={APSSortieHopital} />
-      <Route path="/services/residences" component={APSResidences} />
-      <Route path="/services/sante-mentale" component={APSSanteMentale} />
-      <Route path="/services/iot" component={APSIoT} />
+      <Route path="/devenir-aps" component={DevenirAPS} />
+      <Route path="/partenariats" component={Partenaires} />
+      <Route path="/a-propos" component={APropos} />
+      <Route path="/contact" component={Contact} />
+      {/* Legacy / secondary routes */}
       <Route path="/devenir-partenaire" component={DevenirPartenaire} />
+      <Route path="/sante-mentale" component={SanteMentale} />
       {/* Fallback */}
       <Route component={APSHome} />
     </Switch>

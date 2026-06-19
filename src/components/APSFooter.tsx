@@ -2,21 +2,21 @@ import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock, ArrowRight, Facebook, Instagram, Linkedin } from "lucide-react";
 
 const NAV = [
-  { label: "Accueil",       href: "/" },
-  { label: "À propos",      href: "/a-propos" },
-  { label: "Nos services",  href: "/services" },
-  { label: "Santé mentale", href: "/sante-mentale" },
-  { label: "Technologie",   href: "/technologie" },
-  { label: "Partenaires",   href: "/partenaires" },
+  { label: "Accueil",      href: "/" },
+  { label: "Pour qui",     href: "/pour-qui" },
+  { label: "Technologie",  href: "/technologie" },
+  { label: "Partenariats", href: "/partenariats" },
+  { label: "À propos",     href: "/a-propos" },
+  { label: "Devenir APS",  href: "/devenir-aps" },
 ];
 
 const SERVICES = [
-  { label: "Livraison Last-Mile",       href: "/services/livraison" },
-  { label: "Accompagnement patient",    href: "/services/accompagnement" },
-  { label: "Sortie d'hôpital",          href: "/services/sortie-hopital" },
-  { label: "Services RI / RPA / RTF",   href: "/services/residences" },
-  { label: "Santé mentale & bien-être", href: "/services/sante-mentale" },
-  { label: "Soins à domicile & IoT",    href: "/services/iot" },
+  { label: "Décharge hospitalière",      href: "/services#decharge-hospitaliere" },
+  { label: "Accompagnement aux RDV",     href: "/services#accompagnement" },
+  { label: "Livraison de médicaments",   href: "/services#livraison" },
+  { label: "Transport d'échantillons",   href: "/services#echantillons" },
+  { label: "Visites de suivi",           href: "/services#visites-suivi" },
+  { label: "Monitoring connecté",        href: "/services#monitoring" },
 ];
 
 const linkStyle: React.CSSProperties = {
@@ -78,14 +78,14 @@ export default function APSFooter() {
         >
           <div>
             <div style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#3BBFB8", marginBottom: "0.5rem" }}>
-              Rejoignez le réseau APS
+              Continuité des soins
             </div>
             <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", color: "white", margin: 0, lineHeight: 1.2 }}>
-              Prêt à transformer votre résidence&nbsp;?
+              Parlons de votre corridor de soins&nbsp;?
             </h3>
           </div>
           <Link
-            href="/devenir-partenaire"
+            href="/contact"
             className="no-underline"
             style={{
               display: "inline-flex",
@@ -112,7 +112,7 @@ export default function APSFooter() {
               (e.currentTarget as HTMLElement).style.boxShadow = "none";
             }}
           >
-            Devenir partenaire <ArrowRight size={16} />
+            Demander une rencontre <ArrowRight size={16} />
           </Link>
         </div>
       </div>
@@ -136,7 +136,7 @@ export default function APSFooter() {
               style={{ height: "48px", width: "auto", filter: "brightness(0) invert(1)", opacity: 0.92, marginBottom: "1.25rem" }}
             />
             <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.75, marginBottom: "1.5rem", maxWidth: "300px" }}>
-              Agents de Proximité Santé — Recréer le lien humain dans le système de santé québécois. Soutien aux résidences RI, RPA et RTF.
+              Agents de Proximité en Santé propulsés par Vaistat. Le pont humain et technologique entre le patient, la pharmacie, le domicile et le système de santé.
             </p>
 
             {/* Certifications */}
