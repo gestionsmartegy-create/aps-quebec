@@ -47,8 +47,7 @@ function HeroSection() {
         <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
           {/* Left */}
           <div className="animate-fade-in-left">
-            <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full" style={{ background: "#FFF1EA", border: "1px solid rgba(242,100,25,0.25)" }}>
-              <span style={{ width: 6, height: 6, borderRadius: 99, background: "#F26419" }} className="pulse-soft" />
+            <div className="inline-flex items-center mb-6 px-3 py-1.5 rounded-full" style={{ background: "#FFF1EA", border: "1px solid rgba(242,100,25,0.25)" }}>
               <span style={{ fontSize: "0.72rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#D5500D" }}>Propulsé par Vaistat</span>
             </div>
 

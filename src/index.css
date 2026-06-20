@@ -62,13 +62,6 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.aps-badge::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #0EA5AA;
-}
 
 /* ── Typography ── */
 .aps-section-title {
@@ -243,9 +236,7 @@ body {
 }
 
 .aps-section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
+  display: inline-block;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -253,32 +244,14 @@ body {
   color: #F26419;
 }
 
-.aps-section-label::before {
-  content: "";
-  width: 28px;
-  height: 2px;
-  background: #F26419;
-  display: inline-block;
-}
-
-/* Eyebrow centré (avec barres des deux côtés) */
+/* Eyebrow centré */
 .aps-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
+  display: inline-block;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #F26419;
-}
-.aps-eyebrow::before,
-.aps-eyebrow::after {
-  content: "";
-  width: 24px;
-  height: 2px;
-  background: rgba(242,100,25,0.4);
-  display: inline-block;
 }
 
 /* Numéro de section style industriel */

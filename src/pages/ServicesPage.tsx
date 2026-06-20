@@ -15,6 +15,7 @@ import {
 const servicesList = [
   {
     id: "decharge-hospitaliere",
+    short: "Décharge hospitalière",
     img: IMG.serviceDecharge,
     icon: Heart,
     title: "Soutien à la décharge hospitalière",
@@ -32,6 +33,7 @@ const servicesList = [
   },
   {
     id: "accompagnement",
+    short: "Accompagnement",
     img: IMG.serviceAccompagnement,
     icon: UserCheck,
     title: "Accompagnement aux rendez-vous médicaux",
@@ -48,6 +50,7 @@ const servicesList = [
   },
   {
     id: "livraison",
+    short: "Livraison médicaments",
     img: IMG.serviceLivraison,
     icon: Truck,
     title: "Livraison sécurisée de médicaments",
@@ -65,6 +68,7 @@ const servicesList = [
   },
   {
     id: "echantillons",
+    short: "Échantillons",
     img: IMG.serviceEchantillons,
     icon: FlaskConical,
     title: "Transport d'échantillons biologiques et prélèvements",
@@ -82,6 +86,7 @@ const servicesList = [
   },
   {
     id: "visites-suivi",
+    short: "Visites de suivi",
     img: IMG.serviceVisites,
     icon: Activity,
     title: "Visites de suivi et présence rassurante",
@@ -98,6 +103,7 @@ const servicesList = [
   },
   {
     id: "monitoring",
+    short: "Monitoring connecté",
     img: IMG.serviceMonitoring,
     icon: Home,
     title: "Monitoring connecté à domicile",
@@ -150,7 +156,7 @@ export default function ServicesPage() {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#EFF9FA"; (e.currentTarget as HTMLElement).style.color = "#0EA5AA"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.color = "#3A5A60"; }}
               >
-                <s.icon size={15} /> {s.title.split(" ").slice(0, 2).join(" ")}
+                <s.icon size={15} /> {s.short}
               </a>
             ))}
           </div>
