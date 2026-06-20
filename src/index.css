@@ -14,6 +14,10 @@
   --aps-teal-dark: #0A7F84;
   --aps-navy: #1A3F7A;
   --aps-navy-light: #2D5799;
+  --aps-navy-deep: #0D1E3F;
+  --aps-orange: #F26419;
+  --aps-orange-dark: #D5500D;
+  --aps-orange-soft: #FFF1EA;
   --aps-cream: #FAFAF8;
   --aps-dark: #1A2E35;
 }
@@ -147,6 +151,29 @@ body {
 
 .aps-btn-teal:active { transform: scale(0.97); }
 
+.aps-btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #F26419;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border-radius: 0.625rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.aps-btn-orange:hover {
+  background: #D5500D;
+  box-shadow: 0 6px 20px rgba(242, 100, 25, 0.35);
+}
+
+.aps-btn-orange:active { transform: scale(0.97); }
+
 .aps-btn-outline {
   display: inline-flex;
   align-items: center;
@@ -216,12 +243,64 @@ body {
 }
 
 .aps-section-label {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #0EA5AA;
+  color: #F26419;
+}
+
+.aps-section-label::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: #F26419;
+  display: inline-block;
+}
+
+/* Eyebrow centré (avec barres des deux côtés) */
+.aps-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #F26419;
+}
+.aps-eyebrow::before,
+.aps-eyebrow::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: rgba(242,100,25,0.4);
+  display: inline-block;
+}
+
+/* Numéro de section style industriel */
+.aps-num {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: #F26419;
+}
+
+/* Carte medtech : bord net, coin accent */
+.aps-card-flat {
+  background: white;
+  border: 1px solid #E0EAF4;
+  border-radius: 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.aps-card-flat:hover {
+  border-color: rgba(242,100,25,0.4);
+  box-shadow: 0 10px 30px rgba(26,63,122,0.08);
+  transform: translateY(-3px);
 }
 
 .aps-badge-teal {

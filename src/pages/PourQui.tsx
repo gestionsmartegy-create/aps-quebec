@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import APSNavbar from "@/components/APSNavbar";
 import APSFooter from "@/components/APSFooter";
 import { Link } from "wouter";
+import { IMG } from "@/lib/images";
 import { ArrowRight, CheckCircle2, Pill, Building2, Home, Hospital, HandHeart } from "lucide-react";
 
 /* ============================================================
@@ -11,6 +12,7 @@ import { ArrowRight, CheckCircle2, Pill, Building2, Home, Hospital, HandHeart } 
 const segments = [
   {
     id: "pharmacies",
+    img: IMG.segPharmacie,
     icon: Pill,
     title: "Pour les pharmacies",
     intro: "APS Québec aide les pharmacies à renforcer leur service patient avec une logistique médicale plus structurée, traçable et connectée.",
@@ -26,6 +28,7 @@ const segments = [
   },
   {
     id: "residences",
+    img: IMG.segResidence,
     icon: Building2,
     title: "Pour les résidences, RI, RPA et CHSLD",
     intro: "APS Québec soutient les milieux de vie qui doivent coordonner médicaments, rendez-vous, suivis et communications avec les familles.",
@@ -41,6 +44,7 @@ const segments = [
   },
   {
     id: "soins-domicile",
+    img: IMG.segDomicile,
     icon: Home,
     title: "Pour les entreprises de soins à domicile",
     intro: "APS Québec permet aux opérateurs de soins à domicile d'élargir leur offre sans mobiliser leurs équipes cliniques pour des tâches logistiques ou non cliniques.",
@@ -57,6 +61,7 @@ const segments = [
   },
   {
     id: "hopitaux",
+    img: IMG.segHopital,
     icon: Hospital,
     title: "Pour les hôpitaux, cliniques et corridors de soins",
     intro: "APS Québec peut contribuer à structurer des corridors de décharge sécurisés, fluidifier les transitions et documenter les suivis post-hospitalisation.",
@@ -72,6 +77,7 @@ const segments = [
   },
   {
     id: "familles",
+    img: IMG.segFamille,
     icon: HandHeart,
     title: "Pour les familles et proches aidants",
     intro: "APS Québec offre une présence rassurante et une visibilité accrue lorsque les proches ne peuvent pas être physiquement présents.",
@@ -111,31 +117,35 @@ export default function PourQui() {
       {/* Segments */}
       <section className="aps-section">
         <div className="container">
-          <div className="flex flex-col gap-6 max-w-4xl mx-auto">
+          <div className="flex flex-col gap-10 max-w-5xl mx-auto">
             {segments.map((s, i) => (
-              <div key={s.id} id={s.id} className="bg-white rounded-2xl p-8" style={{ border: "1px solid #E0EAF4", boxShadow: "0 4px 20px rgba(26,63,122,0.06)" }}>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: i % 2 === 0 ? "linear-gradient(135deg, #1A3F7A, #0EA5AA)" : "linear-gradient(135deg, #0EA5AA, #3BBFB8)" }}>
-                    <s.icon size={26} color="white" />
+              <div key={s.id} id={s.id} className="scroll-mt-28 grid lg:grid-cols-2 gap-8 items-center">
+                {/* Image */}
+                <div className={`relative rounded-2xl overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`} style={{ boxShadow: "0 16px 44px rgba(26,63,122,0.14)", minHeight: "300px" }}>
+                  <img src={s.img} alt={s.title} className="w-full h-full object-cover" style={{ position: "absolute", inset: 0 }} />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(26,63,122,0.3), rgba(14,165,170,0.1))" }} />
+                  <div className="absolute top-4 left-4 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: "white" }}>
+                    <s.icon size={22} style={{ color: "#0EA5AA" }} />
                   </div>
-                  <h2 className="font-black text-xl" style={{ color: "#1A3F7A", fontFamily: "'DM Sans', sans-serif" }}>{s.title}</h2>
                 </div>
+                {/* Content */}
+                <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+                  <div className="aps-section-label mb-3">0{i + 1} — {s.title.replace("Pour les ", "").replace("Pour ", "")}</div>
+                  <h2 className="font-black text-xl mb-3" style={{ color: "#1A3F7A", fontFamily: "'DM Sans', sans-serif" }}>{s.title}</h2>
+                  <p className="text-base leading-relaxed mb-5" style={{ color: "#4A6670" }}>{s.intro}</p>
 
-                <p className="text-base leading-relaxed mb-6" style={{ color: "#4A6670" }}>{s.intro}</p>
+                  <div className="grid sm:grid-cols-2 gap-2 mb-5">
+                    {s.needs.map((n) => (
+                      <div key={n} className="flex items-start gap-2 text-sm" style={{ color: "#3A5A60" }}>
+                        <CheckCircle2 size={15} style={{ color: "#0EA5AA", flexShrink: 0, marginTop: "2px" }} />
+                        {n}
+                      </div>
+                    ))}
+                  </div>
 
-                <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#0EA5AA" }}>Besoins adressés</div>
-                <div className="grid sm:grid-cols-2 gap-2 mb-6">
-                  {s.needs.map((n) => (
-                    <div key={n} className="flex items-start gap-2 text-sm" style={{ color: "#3A5A60" }}>
-                      <CheckCircle2 size={15} style={{ color: "#0EA5AA", flexShrink: 0, marginTop: "2px" }} />
-                      {n}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="rounded-xl p-4 flex items-start gap-3" style={{ background: "#F4F9F9", border: "1px solid #E0EAF4" }}>
-                  <div className="text-xs font-bold uppercase tracking-widest pt-1 flex-shrink-0" style={{ color: "#1A3F7A" }}>Message clé</div>
-                  <p className="text-sm font-semibold leading-relaxed" style={{ color: "#1A3F7A" }}>{s.key}</p>
+                  <div className="rounded-xl p-4" style={{ background: "#FFF6F1", borderLeft: "3px solid #F26419" }}>
+                    <p className="text-sm font-semibold leading-relaxed" style={{ color: "#1A3F7A" }}>{s.key}</p>
+                  </div>
                 </div>
               </div>
             ))}

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import APSNavbar from "@/components/APSNavbar";
 import APSFooter from "@/components/APSFooter";
+import { IMG } from "@/lib/images";
 import { Target, Eye, Compass, MapPin, Network, RefreshCw, ArrowRight } from "lucide-react";
 
 /* ============================================================
@@ -45,15 +46,23 @@ export default function APropos() {
       {/* Récit */}
       <section className="aps-section">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <div className="aps-section-label mb-3">Notre conviction</div>
-            <h2 className="aps-section-title mb-6">L'avenir des soins ne sera pas seulement numérique. Il sera <span>hybride</span>.</h2>
-            <p className="text-base leading-relaxed mb-5" style={{ color: "#4A6670" }}>
-              Nous croyons que l'avenir des soins combinera la technologie, les données, la traçabilité et l'intelligence opérationnelle avec une présence humaine capable de rassurer, accompagner, observer et agir.
-            </p>
-            <p className="text-base leading-relaxed" style={{ color: "#4A6670" }}>
-              Vaistat est une entreprise technologique québécoise spécialisée dans la logistique pharmaceutique intelligente, la coordination numérique en santé et les plateformes intégrées. Le modèle APS Québec permet d'étendre cette expertise à des services à plus forte valeur : décharge hospitalière, accompagnement, logistique médicale, prélèvements, monitoring et continuité visible pour les familles.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <div className="relative">
+              <div className="absolute -bottom-3 -left-3 w-full h-full rounded-2xl" style={{ border: "2px solid #F26419", opacity: 0.25 }} />
+              <div className="relative rounded-2xl overflow-hidden" style={{ boxShadow: "0 20px 56px rgba(26,63,122,0.16)" }}>
+                <img src={IMG.about} alt="Équipe APS Québec" className="w-full object-cover" style={{ height: "460px" }} />
+              </div>
+            </div>
+            <div>
+              <div className="aps-section-label mb-3">Notre conviction</div>
+              <h2 className="aps-section-title mb-6">L'avenir des soins ne sera pas seulement numérique. Il sera <span>hybride</span>.</h2>
+              <p className="text-base leading-relaxed mb-5" style={{ color: "#4A6670" }}>
+                Nous croyons que l'avenir des soins combinera la technologie, les données, la traçabilité et l'intelligence opérationnelle avec une présence humaine capable de rassurer, accompagner, observer et agir.
+              </p>
+              <p className="text-base leading-relaxed" style={{ color: "#4A6670" }}>
+                Vaistat est une entreprise technologique québécoise spécialisée dans la logistique pharmaceutique intelligente, la coordination numérique en santé et les plateformes intégrées. Le modèle APS Québec permet d'étendre cette expertise à des services à plus forte valeur : décharge hospitalière, accompagnement, logistique médicale, prélèvements, monitoring et continuité visible pour les familles.
+              </p>
+            </div>
           </div>
         </div>
       </section>

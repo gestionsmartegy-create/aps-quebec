@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import APSNavbar from "@/components/APSNavbar";
 import APSFooter from "@/components/APSFooter";
 import { Link } from "wouter";
+import { IMG } from "@/lib/images";
 import {
   ArrowRight, CheckCircle2,
   Heart, UserCheck, Truck, FlaskConical, Activity, Home,
@@ -14,6 +15,7 @@ import {
 const servicesList = [
   {
     id: "decharge-hospitaliere",
+    img: IMG.serviceDecharge,
     icon: Heart,
     title: "Soutien à la décharge hospitalière",
     intro: "APS Québec accompagne le patient dès la sortie de l'hôpital pour sécuriser la transition vers le domicile, une résidence, une ressource intermédiaire ou un autre milieu de vie.",
@@ -30,6 +32,7 @@ const servicesList = [
   },
   {
     id: "accompagnement",
+    img: IMG.serviceAccompagnement,
     icon: UserCheck,
     title: "Accompagnement aux rendez-vous médicaux",
     intro: "APS Québec accompagne les patients et résidents à leurs rendez-vous médicaux afin de réduire les absences, sécuriser les déplacements et améliorer la continuité du suivi.",
@@ -45,6 +48,7 @@ const servicesList = [
   },
   {
     id: "livraison",
+    img: IMG.serviceLivraison,
     icon: Truck,
     title: "Livraison sécurisée de médicaments",
     intro: "APS Québec assure la livraison de médicaments avec une logique de traçabilité, de preuve d'exécution et de coordination avec les pharmacies partenaires.",
@@ -61,6 +65,7 @@ const servicesList = [
   },
   {
     id: "echantillons",
+    img: IMG.serviceEchantillons,
     icon: FlaskConical,
     title: "Transport d'échantillons biologiques et prélèvements",
     intro: "APS Québec peut soutenir la logistique des prélèvements sanguins, urinaires ou autres échantillons via des laboratoires partenaires et selon les protocoles convenus.",
@@ -77,6 +82,7 @@ const servicesList = [
   },
   {
     id: "visites-suivi",
+    img: IMG.serviceVisites,
     icon: Activity,
     title: "Visites de suivi et présence rassurante",
     intro: "Entre deux interventions cliniques, APS Québec peut effectuer des visites de suivi légères pour vérifier, rassurer, documenter et signaler rapidement une situation à risque.",
@@ -92,6 +98,7 @@ const servicesList = [
   },
   {
     id: "monitoring",
+    img: IMG.serviceMonitoring,
     icon: Home,
     title: "Monitoring connecté à domicile",
     intro: "APS Québec peut soutenir l'intégration de dispositifs de monitoring à domicile, connecter certaines alertes au parcours patient et offrir plus de visibilité aux partenaires et familles autorisées.",
@@ -153,35 +160,47 @@ export default function ServicesPage() {
       {/* Services */}
       <section className="aps-section">
         <div className="container">
-          <div className="flex flex-col gap-6 max-w-4xl mx-auto">
+          <div className="flex flex-col gap-10 max-w-5xl mx-auto">
             {servicesList.map((s, i) => (
-              <div key={s.id} id={s.id} className="scroll-mt-32 bg-white rounded-2xl p-8" style={{ border: "1px solid #E0EAF4", boxShadow: "0 4px 20px rgba(26,63,122,0.06)" }}>
-                <div className="flex items-start gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: i % 2 === 0 ? "linear-gradient(135deg, #1A3F7A, #0EA5AA)" : "linear-gradient(135deg, #0EA5AA, #3BBFB8)" }}>
-                    <s.icon size={26} color="white" />
+              <div key={s.id} id={s.id} className="scroll-mt-32 bg-white rounded-2xl overflow-hidden" style={{ border: "1px solid #E0EAF4", boxShadow: "0 4px 20px rgba(26,63,122,0.06)" }}>
+                <div className={`grid lg:grid-cols-[0.8fr_1.2fr] ${i % 2 === 1 ? "lg:[direction:rtl]" : ""}`}>
+                  {/* Image */}
+                  <div className="relative min-h-[240px] lg:[direction:ltr]" style={{ overflow: "hidden" }}>
+                    <img src={s.img} alt={s.title} className="w-full h-full object-cover" style={{ position: "absolute", inset: 0 }} />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(26,63,122,0.35), rgba(14,165,170,0.15))" }} />
+                    <div className="absolute top-4 left-4 flex items-center gap-2">
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "white" }}>
+                        <s.icon size={19} style={{ color: "#0EA5AA" }} />
+                      </div>
+                      <span className="aps-num" style={{ color: "white", fontSize: "0.95rem" }}>0{i + 1}</span>
+                    </div>
                   </div>
-                  <div>
+                  {/* Content */}
+                  <div className="p-8 lg:[direction:ltr]">
                     <h2 className="font-black text-xl mb-2" style={{ color: "#1A3F7A", fontFamily: "'DM Sans', sans-serif" }}>{s.title}</h2>
-                    <p className="text-base leading-relaxed" style={{ color: "#4A6670" }}>{s.intro}</p>
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6 mt-6">
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#0EA5AA" }}>Ce que le service inclut</div>
-                    <ul className="flex flex-col gap-2">
-                      {s.includes.map((inc) => (
-                        <li key={inc} className="flex items-start gap-2 text-sm" style={{ color: "#3A5A60" }}>
-                          <CheckCircle2 size={15} style={{ color: "#0EA5AA", flexShrink: 0, marginTop: "2px" }} />
-                          {inc}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#1A3F7A" }}>Valeur ajoutée</div>
-                    <div className="rounded-xl p-4 text-sm leading-relaxed" style={{ background: "#F4F9F9", color: "#3A5A60", border: "1px solid #E0EAF4" }}>
-                      {s.value}
+                    <p className="text-base leading-relaxed mb-6" style={{ color: "#4A6670" }}>{s.intro}</p>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div>
+                        <div className="text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2" style={{ color: "#0EA5AA" }}>
+                          <span style={{ width: 18, height: 2, background: "#0EA5AA" }} /> Ce qui est inclus
+                        </div>
+                        <ul className="flex flex-col gap-2">
+                          {s.includes.map((inc) => (
+                            <li key={inc} className="flex items-start gap-2 text-sm" style={{ color: "#3A5A60" }}>
+                              <CheckCircle2 size={15} style={{ color: "#0EA5AA", flexShrink: 0, marginTop: "2px" }} />
+                              {inc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2" style={{ color: "#F26419" }}>
+                          <span style={{ width: 18, height: 2, background: "#F26419" }} /> Valeur ajoutée
+                        </div>
+                        <div className="rounded-xl p-4 text-sm leading-relaxed" style={{ background: "#FFF6F1", color: "#3A5A60", border: "1px solid rgba(242,100,25,0.2)" }}>
+                          {s.value}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import APSNavbar from "@/components/APSNavbar";
 import APSFooter from "@/components/APSFooter";
+import { IMG } from "@/lib/images";
 import {
   CheckCircle2, ArrowLeft, Send,
   HeartHandshake, ShieldCheck, EyeOff, Award, Clock, Smile, ClipboardCheck, Smartphone, Stethoscope,
@@ -101,15 +102,24 @@ export default function DevenirAPS() {
       <APSNavbar />
 
       {/* Hero */}
-      <section style={{ background: "linear-gradient(135deg, #1A3F7A 0%, #0EA5AA 100%)", paddingTop: "7rem", paddingBottom: "3.5rem" }}>
+      <section style={{ background: "linear-gradient(135deg, #0D1E3F 0%, #1A3F7A 100%)", paddingTop: "7rem", paddingBottom: "3.5rem" }}>
         <div className="container">
-          <div className="aps-badge mb-4" style={{ background: "rgba(255,255,255,0.15)", color: "white", border: "1px solid rgba(255,255,255,0.25)" }}>Carrières</div>
-          <h1 className="font-black mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "white", lineHeight: 1.15, maxWidth: "760px" }}>
-            Devenir Agent de Proximité en Santé
-          </h1>
-          <p className="text-lg" style={{ color: "rgba(255,255,255,0.85)", maxWidth: "640px", lineHeight: 1.7 }}>
-            Un nouveau rôle de proximité pour soutenir les patients, les familles et les partenaires de soins.
-          </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="aps-badge mb-4" style={{ background: "rgba(242,100,25,0.18)", color: "#FFB088", border: "1px solid rgba(242,100,25,0.35)" }}>Carrières</div>
+              <h1 className="font-black mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "white", lineHeight: 1.15 }}>
+                Devenir Agent de Proximité en Santé
+              </h1>
+              <p className="text-lg" style={{ color: "rgba(255,255,255,0.82)", maxWidth: "520px", lineHeight: 1.7 }}>
+                Un nouveau rôle de proximité pour soutenir les patients, les familles et les partenaires de soins.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 24px 60px rgba(0,0,0,0.35)" }}>
+                <img src={IMG.devenirAps} alt="Agent de Proximité en Santé sur le terrain" className="w-full object-cover" style={{ height: "360px" }} />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import APSNavbar from "@/components/APSNavbar";
 import APSFooter from "@/components/APSFooter";
+import { IMG } from "@/lib/images";
 import { Settings, Tags, Route, Handshake, ArrowRight, Pill, Building2, Home, Hospital, FlaskConical, Shield } from "lucide-react";
 
 /* ============================================================
@@ -71,19 +72,25 @@ export default function Partenaires() {
       {/* Partenaires types */}
       <section className="aps-section-alt">
         <div className="container">
-          <div className="text-center mb-12">
-            <div className="aps-section-label mb-3">Avec qui nous travaillons</div>
-            <h2 className="aps-section-title">Un modèle <span>transversal</span></h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {partenaires.map((p, i) => (
-              <div key={i} className="bg-white rounded-xl p-5 flex items-center gap-3" style={{ border: "1px solid #E0EAF4" }}>
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(14,165,170,0.1)" }}>
-                  <p.icon size={18} style={{ color: "#0EA5AA" }} />
-                </div>
-                <span className="text-sm font-semibold" style={{ color: "#1A3F7A" }}>{p.label}</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative rounded-2xl overflow-hidden" style={{ boxShadow: "0 20px 56px rgba(26,63,122,0.16)", minHeight: "360px" }}>
+              <img src={IMG.partenariat} alt="Partenariats APS Québec" className="w-full h-full object-cover" style={{ position: "absolute", inset: 0 }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(26,63,122,0.25), transparent)" }} />
+            </div>
+            <div>
+              <div className="aps-section-label mb-3">Avec qui nous travaillons</div>
+              <h2 className="aps-section-title mb-6">Un modèle <span>transversal</span></h2>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {partenaires.map((p, i) => (
+                  <div key={i} className="bg-white rounded-xl p-4 flex items-center gap-3" style={{ border: "1px solid #E0EAF4" }}>
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(242,100,25,0.1)" }}>
+                      <p.icon size={18} style={{ color: "#F26419" }} />
+                    </div>
+                    <span className="text-sm font-semibold" style={{ color: "#1A3F7A" }}>{p.label}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
