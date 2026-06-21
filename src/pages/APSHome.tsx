@@ -38,67 +38,57 @@ function useCounter(target: number, duration = 1800) {
 // ─── HERO ────────────────────────────────────────────────────
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden" style={{ background: "#FAFAF8", paddingTop: "6.5rem", paddingBottom: "3rem" }}>
-      {/* fine grid texture */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: "linear-gradient(#1A3F7A0A 1px, transparent 1px), linear-gradient(90deg, #1A3F7A0A 1px, transparent 1px)",
-        backgroundSize: "44px 44px", maskImage: "linear-gradient(to bottom, black, transparent 70%)",
-      }} />
-      <div className="container relative z-10">
-        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
-          {/* Left */}
-          <div className="animate-fade-in-left">
-            <div className="inline-flex items-center mb-6 px-3 py-1.5 rounded-full" style={{ background: "#FFF1EA", border: "1px solid rgba(242,100,25,0.25)" }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#D5500D" }}>Propulsé par Vaistat</span>
-            </div>
+    <section style={{ background: "#FAFAF8" }}>
+      {/* Bannière APS Québec pleine largeur */}
+      <div style={{ paddingTop: "4rem", position: "relative" }}>
+        <img
+          src="/headerAPS.jpeg"
+          alt="APS Québec — Agent de Proximité en Santé"
+          className="w-full object-cover"
+          style={{ height: "clamp(280px, 46vw, 620px)", objectPosition: "center", display: "block" }}
+        />
+      </div>
 
-            <h1 className="font-black mb-6" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(2.1rem, 4.4vw, 3.45rem)", color: "#1A2E35", lineHeight: 1.08, letterSpacing: "-0.02em" }}>
-              Le pont <span style={{ color: "#0EA5AA" }}>humain</span> et <span style={{ color: "#1A3F7A" }}>technologique</span> entre le patient et le système de santé
-            </h1>
-
-            <p className="text-lg mb-8 leading-relaxed" style={{ color: "#4A6670", maxWidth: "540px" }}>
-              APS Québec déploie des <strong>Agents de Proximité en Santé</strong> formés pour soutenir la continuité des soins : décharge hospitalière, accompagnement médical, livraison de médicaments, prélèvements, visites de suivi et monitoring connecté.
-            </p>
-
-            <div className="flex flex-wrap gap-4 mb-10">
-              <Link href="/contact" className="aps-btn-orange no-underline">
-                Demander une rencontre <ArrowRight size={16} />
-              </Link>
-              <Link href="/services" className="aps-btn-outline no-underline">
-                Découvrir nos services
-              </Link>
-            </div>
-
-            {/* mini trust row */}
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 pt-6" style={{ borderTop: "1px solid #E0EAF4" }}>
-              {[
-                { k: "Missions", v: "Documentées & traçables" },
-                { k: "Couverture", v: "Domicile · Pharmacie · Résidence" },
-                { k: "Rôle", v: "Non clinique, mais essentiel" },
-              ].map((x) => (
-                <div key={x.k}>
-                  <div style={{ fontSize: "0.62rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#9BAFB5" }}>{x.k}</div>
-                  <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "#1A3F7A" }}>{x.v}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — image with framing */}
-          <div className="relative animate-fade-in-right delay-200">
-            <div className="absolute -top-3 -right-3 w-full h-full rounded-2xl" style={{ border: "2px solid #0EA5AA", opacity: 0.25 }} />
-            <div className="relative rounded-2xl overflow-hidden" style={{ boxShadow: "0 24px 64px rgba(26,63,122,0.22)" }}>
-              <img src={IMG.hero} alt="Agent de Proximité en Santé auprès d'un patient" className="w-full object-cover" style={{ height: "500px" }} />
-              <div className="absolute inset-x-0 bottom-0 h-28" style={{ background: "linear-gradient(to top, rgba(13,30,63,0.55), transparent)" }} />
-              {/* corner tag */}
-              <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg" style={{ background: "rgba(242,100,25,0.95)", backdropFilter: "blur(4px)" }}>
-                <span style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.06em", color: "white" }}>CONTINUITÉ DES SOINS</span>
+      {/* Bande accroche + CTA */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: "linear-gradient(#1A3F7A0A 1px, transparent 1px), linear-gradient(90deg, #1A3F7A0A 1px, transparent 1px)",
+          backgroundSize: "44px 44px", maskImage: "linear-gradient(to bottom, black, transparent 80%)",
+        }} />
+        <div className="container relative z-10" style={{ paddingTop: "2.75rem", paddingBottom: "2.75rem" }}>
+          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center mb-5 px-3 py-1.5 rounded-full" style={{ background: "#FFF1EA", border: "1px solid rgba(242,100,25,0.25)" }}>
+                <span style={{ fontSize: "0.72rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#D5500D" }}>Propulsé par Vaistat</span>
               </div>
+              <h1 className="font-black mb-5" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", color: "#1A2E35", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+                Le pont <span style={{ color: "#0EA5AA" }}>humain</span> et <span style={{ color: "#1A3F7A" }}>technologique</span> entre le patient et le système de santé
+              </h1>
+              <p className="text-lg leading-relaxed" style={{ color: "#4A6670", maxWidth: "620px" }}>
+                APS Québec déploie des <strong>Agents de Proximité en Santé</strong> formés pour soutenir la continuité des soins : décharge hospitalière, accompagnement médical, livraison de médicaments, prélèvements, visites de suivi et monitoring connecté.
+              </p>
             </div>
-            {/* floating stat */}
-            <div className="absolute -bottom-5 -left-5 bg-white rounded-xl px-5 py-4" style={{ boxShadow: "0 12px 32px rgba(26,63,122,0.16)", border: "1px solid #E8F0F1" }}>
-              <div className="font-black" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.6rem", color: "#1A3F7A", lineHeight: 1 }}>400K<span style={{ color: "#F26419" }}>+</span></div>
-              <div style={{ fontSize: "0.7rem", color: "#6B8A90", marginTop: 2 }}>rendez-vous manqués<br />par an au Québec</div>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact" className="aps-btn-orange no-underline">
+                  Demander une rencontre <ArrowRight size={16} />
+                </Link>
+                <Link href="/services" className="aps-btn-outline no-underline">
+                  Découvrir nos services
+                </Link>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-7 gap-y-3 pt-5" style={{ borderTop: "1px solid #E0EAF4" }}>
+                {[
+                  { k: "Missions", v: "Documentées & traçables" },
+                  { k: "Couverture", v: "Domicile · Pharmacie · Résidence" },
+                  { k: "Rôle", v: "Non clinique, essentiel" },
+                ].map((x) => (
+                  <div key={x.k}>
+                    <div style={{ fontSize: "0.6rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#9BAFB5" }}>{x.k}</div>
+                    <div style={{ fontSize: "0.8rem", fontWeight: 600, color: "#1A3F7A" }}>{x.v}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
