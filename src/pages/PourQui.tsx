@@ -3,7 +3,39 @@ import APSNavbar from "@/components/APSNavbar";
 import APSFooter from "@/components/APSFooter";
 import { Link } from "wouter";
 import { IMG } from "@/lib/images";
-import { ArrowRight, CheckCircle2, Pill, Building2, Home, Hospital, HandHeart } from "lucide-react";
+import { ArrowRight, CheckCircle2, Pill, Building2, Home, Hospital, HandHeart, Landmark, Users, HeartPulse } from "lucide-react";
+
+/* Milieux de vie pour aînés desservis */
+const milieux = [
+  {
+    sigle: "RPA",
+    icon: Building2,
+    nom: "Résidence privée pour aînés",
+    desc: "Résidence privée certifiée pour aînés autonomes ou semi-autonomes.",
+    apporte: ["Accompagnement aux rendez-vous", "Livraisons de médicaments planifiées", "Visites de suivi et présence rassurante", "Visibilité pour les proches aidants"],
+  },
+  {
+    sigle: "RI",
+    icon: Landmark,
+    nom: "Ressource intermédiaire",
+    desc: "Milieu de vie rattaché au réseau public (CISSS/CIUSSS) pour des personnes ayant besoin de soutien ou d'assistance.",
+    apporte: ["Coordination avec les pharmacies", "Transport d'échantillons et prélèvements", "Accompagnement médical", "Réduction de la pression administrative"],
+  },
+  {
+    sigle: "RTF",
+    icon: Users,
+    nom: "Ressource de type familial",
+    desc: "Famille ou résidence d'accueil offrant un milieu de vie familial à des aînés ou des personnes en perte d'autonomie.",
+    apporte: ["Livraisons sécurisées de médicaments", "Accompagnement aux rendez-vous", "Présence rassurante et visites de suivi", "Lien avec le réseau de soins"],
+  },
+  {
+    sigle: "CHSLD",
+    icon: HeartPulse,
+    nom: "Soins de longue durée",
+    desc: "Hébergement pour personnes en grande perte d'autonomie nécessitant des soins continus.",
+    apporte: ["Logistique médicale et prélèvements", "Coordination pharmacie et laboratoire", "Suivi documenté et traçable", "Soutien opérationnel aux équipes"],
+  },
+];
 
 /* ============================================================
    PAGE POUR QUI — Contenu officiel APS Québec
@@ -30,7 +62,7 @@ const segments = [
     id: "residences",
     img: IMG.segResidence,
     icon: Building2,
-    title: "Pour les résidences, RI, RPA et CHSLD",
+    title: "Pour les résidences : RI, RTF, RPA et CHSLD",
     intro: "APS Québec soutient les milieux de vie qui doivent coordonner médicaments, rendez-vous, suivis et communications avec les familles.",
     needs: [
       "Accompagnement aux rendez-vous",
@@ -150,9 +182,56 @@ export default function PourQui() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
+      {/* Milieux de vie : RI · RTF · RPA · CHSLD */}
+      <section className="aps-section-alt" id="milieux">
+        <div className="container">
+          <div className="text-center mb-12">
+            <div className="aps-eyebrow mb-4">Milieux de vie pour aînés</div>
+            <h2 className="aps-section-title mb-4">Un soutien adapté aux <span>RI, RTF, RPA et CHSLD</span></h2>
+            <p className="text-base max-w-2xl mx-auto" style={{ color: "#5A7A82" }}>
+              APS Québec connaît la réalité des milieux de vie québécois. Pour chaque type de ressource, nos agents apportent une couche de soutien humain et opérationnel autour des résidents — sans alourdir vos équipes.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {milieux.map((m) => (
+              <div key={m.sigle} className="bg-white rounded-2xl p-6 flex flex-col" style={{ border: "1px solid #E0EAF4", boxShadow: "0 4px 18px rgba(26,63,122,0.06)" }}>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #1A3F7A, #0EA5AA)" }}>
+                    <m.icon size={20} color="white" />
+                  </div>
+                  <div className="font-black text-xl" style={{ color: "#F26419", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.01em" }}>{m.sigle}</div>
+                </div>
+                <div className="font-bold text-sm mb-1.5" style={{ color: "#1A3F7A", fontFamily: "'DM Sans', sans-serif" }}>{m.nom}</div>
+                <p className="text-xs leading-relaxed mb-4" style={{ color: "#5A7A82" }}>{m.desc}</p>
+                <div className="text-[0.65rem] font-bold uppercase tracking-widest mb-2" style={{ color: "#0EA5AA" }}>Ce qu'APS apporte</div>
+                <ul className="flex flex-col gap-1.5 mt-auto">
+                  {m.apporte.map((a) => (
+                    <li key={a} className="flex items-start gap-1.5 text-xs" style={{ color: "#3A5A60" }}>
+                      <CheckCircle2 size={13} style={{ color: "#0EA5AA", flexShrink: 0, marginTop: "1px" }} />
+                      {a}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/contact" className="aps-btn-orange no-underline">
+              Discuter de votre milieu de vie <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="aps-section">
+        <div className="container">
           {/* CTA */}
-          <div className="text-center mt-14 rounded-2xl p-10" style={{ background: "linear-gradient(135deg, #1A3F7A, #0EA5AA)" }}>
+          <div className="text-center rounded-2xl p-10" style={{ background: "linear-gradient(135deg, #1A3F7A, #0EA5AA)" }}>
             <h2 className="font-black text-2xl text-white mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>Vous vous reconnaissez ?</h2>
             <p className="text-base mb-6 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
               Parlons de votre réalité et structurons ensemble un premier corridor de soins.

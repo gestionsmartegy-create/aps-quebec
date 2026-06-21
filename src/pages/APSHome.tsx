@@ -283,7 +283,7 @@ function ServicesSection() {
 // ─── 04 · POUR QUI (bande avec image + segments) ─────────────
 const segments = [
   { icon: Pill, title: "Pharmacies", desc: "Transformer la livraison pharmaceutique en service de continuité thérapeutique." },
-  { icon: Building2, title: "Résidences, RI, RPA, CHSLD", desc: "Une couche de soutien humain et opérationnel autour des résidents." },
+  { icon: Building2, title: "Résidences · RI · RTF · RPA · CHSLD", desc: "Une couche de soutien humain et opérationnel autour des résidents." },
   { icon: Home, title: "Soins à domicile", desc: "L'extension opérationnelle du fournisseur de soins à domicile." },
   { icon: Hospital, title: "Hôpitaux & cliniques", desc: "Prolonger la continuité des soins au-delà des murs de l'établissement." },
   { icon: HandHeart, title: "Familles & proches aidants", desc: "APS Québec aide la famille à rester connectée." },
