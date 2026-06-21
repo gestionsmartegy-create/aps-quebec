@@ -6,6 +6,7 @@ import Technologie from "./pages/Technologie";
 import DevenirAPS from "./pages/DevenirAPS";
 import Partenaires from "./pages/Partenaires";
 import APropos from "./pages/APropos";
+import SoutienCommunautaire from "./pages/SoutienCommunautaire";
 import Contact from "./pages/Contact";
 import APSConnect from "./pages/APSConnect";
 import DevenirPartenaire from "./pages/DevenirPartenaire";
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/" component={APSHome} />
       <Route path="/services" component={ServicesPage} />
       <Route path="/pour-qui" component={PourQui} />
+      <Route path="/soutien-communautaire" component={SoutienCommunautaire} />
       <Route path="/technologie" component={Technologie} />
       <Route path="/devenir-aps" component={DevenirAPS} />
       <Route path="/partenariats" component={Partenaires} />

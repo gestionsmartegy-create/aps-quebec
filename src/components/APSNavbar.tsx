@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, ChevronDown, LogIn, Heart, UserCheck, Truck, FlaskConical, Activity, Home } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, LogIn, Heart, UserCheck, Truck, FlaskConical, Activity, Home, Users } from "lucide-react";
 
 /* APS Québec Navbar — architecture officielle */
 
@@ -11,6 +11,7 @@ const services = [
   { label: "Transport d'échantillons",             href: "/services#echantillons",          icon: FlaskConical, color: "#1A3F7A" },
   { label: "Visites de suivi & présence",          href: "/services#visites-suivi",         icon: Activity,     color: "#0EA5AA" },
   { label: "Monitoring connecté à domicile",       href: "/services#monitoring",            icon: Home,         color: "#1A3F7A" },
+  { label: "RI / RTF / RPA & Soutien communautaire", href: "/soutien-communautaire",        icon: Users,        color: "#F26419" },
 ];
 
 const navLinks = [

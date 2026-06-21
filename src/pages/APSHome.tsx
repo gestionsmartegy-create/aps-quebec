@@ -9,6 +9,7 @@ import {
   Hospital, CalendarX, Boxes, EyeOff, Clock,
   MapPin, Network, RefreshCw, Pill, Building2, HandHeart,
   Smartphone, Stethoscope, LayoutDashboard, Link2, ShieldCheck, FileCheck, Lock, GraduationCap,
+  TreePine, Users, Brain, CheckCircle2,
 } from "lucide-react";
 
 /* ============================================================
@@ -452,6 +453,52 @@ function PartnershipSection() {
   );
 }
 
+// ─── SOUTIEN COMMUNAUTAIRE (mise en avant) ───────────────────
+function CommunautaireSection() {
+  const axes = [
+    { icon: TreePine, label: "Sorties récréatives & participation sociale" },
+    { icon: UserCheck, label: "Accompagnement assisté aux rendez-vous" },
+    { icon: Brain, label: "Santé mentale & réintégration sociale" },
+    { icon: Users, label: "Soutien aux équipes RI / RTF / RPA" },
+  ];
+  return (
+    <section className="aps-section-alt">
+      <div className="container">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
+          <div className="relative order-2 lg:order-1">
+            <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 20px 56px rgba(26,63,122,0.16)" }}>
+              <img src={IMG.about} alt="Accompagnement et participation sociale APS Québec" className="w-full object-cover" style={{ height: "440px" }} />
+            </div>
+            <div className="absolute -top-4 -left-4 px-4 py-2 rounded-xl" style={{ background: "#F26419", boxShadow: "0 10px 24px rgba(242,100,25,0.3)" }}>
+              <span className="font-black text-white text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>RI · RTF · RPA</span>
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <div className="aps-section-label mb-4">Soutien communautaire</div>
+            <h2 className="aps-section-title mb-4">RI / RTF / RPA & <span>soutien communautaire</span></h2>
+            <p className="text-base leading-relaxed mb-6" style={{ color: "#4A6670" }}>
+              Sorties communautaires sécurisées, programmes de participation sociale et services d'accompagnement assisté pour les personnes âgées, les ressources intermédiaires et les populations vulnérables. APS Québec aide les organisations à recréer le lien social, soutenir l'autonomie et améliorer la qualité de vie.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3 mb-8">
+              {axes.map((a) => (
+                <div key={a.label} className="flex items-center gap-3 p-3 rounded-xl" style={{ background: "white", border: "1px solid #E0EAF4" }}>
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(242,100,25,0.1)" }}>
+                    <a.icon size={17} style={{ color: "#F26419" }} />
+                  </div>
+                  <span className="text-sm font-semibold" style={{ color: "#1A3F7A" }}>{a.label}</span>
+                </div>
+              ))}
+            </div>
+            <Link href="/soutien-communautaire" className="aps-btn-orange no-underline">
+              Découvrir le soutien communautaire <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── CTA FINAL ───────────────────────────────────────────────
 function FinalCTA() {
   return (
@@ -499,6 +546,7 @@ export default function APSQuebecSite() {
       <SolutionSection />
       <ServicesSection />
       <PourQuiSection />
+      <CommunautaireSection />
       <TechSection />
       <ComplianceSection />
       <PartnershipSection />
