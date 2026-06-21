@@ -7,6 +7,7 @@ import DevenirAPS from "./pages/DevenirAPS";
 import Partenaires from "./pages/Partenaires";
 import APropos from "./pages/APropos";
 import Contact from "./pages/Contact";
+import APSConnect from "./pages/APSConnect";
 import DevenirPartenaire from "./pages/DevenirPartenaire";
 import SanteMentale from "./pages/SanteMentale";
 
@@ -21,6 +22,7 @@ export default function App() {
       <Route path="/partenariats" component={Partenaires} />
       <Route path="/a-propos" component={APropos} />
       <Route path="/contact" component={Contact} />
+      <Route path="/aps-connect" component={APSConnect} />
       {/* Legacy / secondary routes */}
       <Route path="/devenir-partenaire" component={DevenirPartenaire} />
       <Route path="/sante-mentale" component={SanteMentale} />

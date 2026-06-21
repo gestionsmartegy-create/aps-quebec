@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, ChevronDown, Heart, UserCheck, Truck, FlaskConical, Activity, Home } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, LogIn, Heart, UserCheck, Truck, FlaskConical, Activity, Home } from "lucide-react";
 
 /* APS Québec Navbar — architecture officielle */
 
@@ -130,11 +130,12 @@ export default function APSNavbar() {
 
           {/* Right CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+18668247828" className="flex items-center gap-1.5 text-sm font-medium no-underline" style={{ color: "#0EA5AA" }}>
-              <Phone size={14} />
-              1-866-824-7828
-            </a>
-            <Link href="/contact" className="px-4 py-2 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90 hover:shadow-md no-underline" style={{ background: "#1A3F7A" }}>
+            <Link href="/aps-connect" className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-bold no-underline transition-all" style={{ color: "#1A3F7A", border: "1.5px solid #E0EAF4" }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#0EA5AA"; (e.currentTarget as HTMLElement).style.color = "#0EA5AA"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#E0EAF4"; (e.currentTarget as HTMLElement).style.color = "#1A3F7A"; }}>
+              <LogIn size={14} /> APS Connect
+            </Link>
+            <Link href="/contact" className="px-4 py-2 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90 hover:shadow-md no-underline" style={{ background: "#F26419" }}>
               Demander une rencontre
             </Link>
           </div>
@@ -174,7 +175,10 @@ export default function APSNavbar() {
               <a href="tel:+18668247828" className="flex items-center gap-2 px-3 py-2 text-sm font-medium no-underline" style={{ color: "#0EA5AA" }}>
                 <Phone size={14} /> 1-866-824-7828
               </a>
-              <Link href="/contact" className="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-bold text-white no-underline" style={{ background: "#1A3F7A" }} onClick={() => setMobileOpen(false)}>
+              <Link href="/aps-connect" className="flex items-center justify-center gap-2 w-full text-center px-4 py-2.5 rounded-lg text-sm font-bold no-underline" style={{ color: "#1A3F7A", border: "1.5px solid #E0EAF4" }} onClick={() => setMobileOpen(false)}>
+                <LogIn size={15} /> APS Connect
+              </Link>
+              <Link href="/contact" className="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-bold text-white no-underline" style={{ background: "#F26419" }} onClick={() => setMobileOpen(false)}>
                 Demander une rencontre
               </Link>
             </div>

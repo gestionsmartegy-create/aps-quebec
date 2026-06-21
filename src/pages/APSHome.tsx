@@ -475,9 +475,14 @@ function FinalCTA() {
             Devenir APS
           </Link>
         </div>
-        <div className="flex items-center justify-center gap-2 mt-8">
-          <Phone size={15} style={{ color: "white" }} />
-          <a href="tel:+18668247828" className="text-sm font-semibold no-underline" style={{ color: "white" }}>1-866-824-7828</a>
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8">
+          <Link href="/aps-connect" className="inline-flex items-center gap-1.5 text-sm font-semibold no-underline" style={{ color: "white" }}>
+            Déjà partenaire ? Accéder à APS Connect <ArrowRight size={14} />
+          </Link>
+          <span style={{ color: "rgba(255,255,255,0.4)" }}>·</span>
+          <a href="tel:+18668247828" className="inline-flex items-center gap-1.5 text-sm font-semibold no-underline" style={{ color: "white" }}>
+            <Phone size={14} /> 1-866-824-7828
+          </a>
         </div>
       </div>
     </section>

@@ -8,6 +8,7 @@ const NAV = [
   { label: "Partenariats", href: "/partenariats" },
   { label: "À propos",     href: "/a-propos" },
   { label: "Devenir APS",  href: "/devenir-aps" },
+  { label: "APS Connect",  href: "/aps-connect" },
 ];
 
 const SERVICES = [

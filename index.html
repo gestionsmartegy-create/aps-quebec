@@ -13,6 +13,14 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- Netlify Forms detection -->
+    <form name="aps-connect" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="espace" />
+      <input type="text" name="prenom" />
+      <input type="text" name="nom" />
+      <input type="email" name="email" />
+      <input type="tel" name="tel" />
+      <input type="text" name="organisation" />
+    </form>
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="nom" />
       <input type="text" name="organisation" />
