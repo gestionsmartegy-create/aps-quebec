@@ -6,11 +6,12 @@ import {
   User, Pill, Building2, Mail, Lock, Phone, ArrowRight, ArrowLeft,
   CheckCircle2, ShieldCheck, Eye, EyeOff, UserPlus, LogIn,
 } from "lucide-react";
+import { submitForm } from "@/lib/submitForm";
 
 /* ============================================================
    APS CONNECT — Portail intégré (écrans natifs)
    Connexion + création de compte par espace.
-   Inscription → Netlify Forms (info@vaistat.com)
+   Inscription → Web3Forms → info@vaistat.com
    ============================================================ */
 
 const espaces = [
@@ -18,10 +19,6 @@ const espaces = [
   { id: "pharmacie", icon: Pill,      title: "Pharmacie",               desc: "Coordonnez commandes, livraisons, preuves et suivis." },
   { id: "partenaire",icon: Building2, title: "Résidence & partenaire",  desc: "Vue opérationnelle : résidences, soins à domicile, corridors cliniques." },
 ];
-
-function encode(d: Record<string, string>) {
-  return Object.keys(d).map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(d[k])).join("&");
-}
 
 export default function APSConnect() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -40,13 +37,10 @@ export default function APSConnect() {
     e.preventDefault();
     setLoading(true);
     try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "aps-connect", espace, ...form }),
-      });
+      await submitForm("APS Connect — Création de compte", { espace, ...form });
       setSubmitted(true);
-    } finally { setLoading(false); }
+    } catch { /* on continue malgré l'erreur */ }
+    finally { setLoading(false); }
   };
 
   const input: React.CSSProperties = {

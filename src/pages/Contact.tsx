@@ -3,9 +3,10 @@ import { Link } from "wouter";
 import APSNavbar from "@/components/APSNavbar";
 import APSFooter from "@/components/APSFooter";
 import { CheckCircle2, ArrowLeft, Send, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { submitForm } from "@/lib/submitForm";
 
 /* ============================================================
-   PAGE CONTACT — Netlify Forms → info@vaistat.com
+   PAGE CONTACT — Web3Forms → info@vaistat.com
    ============================================================ */
 
 const sujets = [
@@ -30,10 +31,6 @@ const typesOrg = [
   "Autre",
 ];
 
-function encode(data: Record<string, string>) {
-  return Object.keys(data).map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k])).join("&");
-}
-
 export default function Contact() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -54,11 +51,7 @@ export default function Contact() {
     setLoading(true);
     setError("");
     try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...form }),
-      });
+      await submitForm("Contact", form);
       setSubmitted(true);
     } catch {
       setError("Une erreur est survenue. Veuillez réessayer ou nous appeler au 1-866-824-7828.");

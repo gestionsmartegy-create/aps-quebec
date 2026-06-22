@@ -8,10 +8,11 @@ import {
   HeartHandshake, ShieldCheck, EyeOff, Award, Clock, Smile, ClipboardCheck, Smartphone, Stethoscope,
   Truck, UserCheck, Heart, FlaskConical, Activity, FileText, AlertTriangle, Radio,
 } from "lucide-react";
+import { submitForm } from "@/lib/submitForm";
 
 /* ============================================================
    PAGE DEVENIR APS — Recrutement d'agents
-   Netlify Forms → info@vaistat.com
+   Web3Forms → info@vaistat.com
    ============================================================ */
 
 const profil = [
@@ -37,10 +38,6 @@ const missions = [
   { icon: Radio, label: "Communication avec les équipes de coordination" },
 ];
 
-function encode(data: Record<string, string>) {
-  return Object.keys(data).map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k])).join("&");
-}
-
 export default function DevenirAPS() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -58,11 +55,7 @@ export default function DevenirAPS() {
     setLoading(true);
     setError("");
     try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "candidature-aps", ...form }),
-      });
+      await submitForm("Candidature APS", form);
       setSubmitted(true);
     } catch {
       setError("Une erreur est survenue. Veuillez réessayer ou nous appeler au 1-866-824-7828.");
