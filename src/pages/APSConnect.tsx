@@ -90,7 +90,7 @@ export default function APSConnect() {
             </div>
             <div className="relative z-10 flex items-center gap-2" style={{ color: "rgba(255,255,255,0.5)" }}>
               <ShieldCheck size={15} />
-              <span className="text-xs">Accès sécurisé · Propulsé par Vaistat</span>
+              <span className="text-xs">Accès sécurisé · APS Québec</span>
             </div>
           </div>
 

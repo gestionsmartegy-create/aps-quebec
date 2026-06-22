@@ -137,7 +137,7 @@ export default function APSFooter() {
               style={{ height: "48px", width: "auto", filter: "brightness(0) invert(1)", opacity: 0.92, marginBottom: "1.25rem" }}
             />
             <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.75, marginBottom: "1.5rem", maxWidth: "300px" }}>
-              Agents de Proximité en Santé propulsés par Vaistat. Le pont humain et technologique entre le patient, la pharmacie, le domicile et le système de santé.
+              Le pont humain et technologique entre le patient, la pharmacie, le domicile et le système de santé québécois.
             </p>
 
             {/* Certifications */}

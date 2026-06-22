@@ -12,7 +12,7 @@ import { Target, Eye, Compass, MapPin, Network, RefreshCw, ArrowRight } from "lu
 const piliers = [
   { icon: MapPin, title: "Proximité", desc: "Des agents formés interviennent là où le parcours patient se vit réellement : à domicile, en pharmacie, à l'hôpital, en résidence et dans la communauté." },
   { icon: Network, title: "Coordination", desc: "Chaque mission est structurée, assignée, documentée et suivie. APS Québec agit comme une couche opérationnelle entre les partenaires de soins." },
-  { icon: RefreshCw, title: "Continuité", desc: "Grâce à Vaistat, les missions, suivis, traçabilité, preuves, alertes et données sont connectés dans une même logique." },
+  { icon: RefreshCw, title: "Continuité", desc: "Missions, suivis, traçabilité, preuves, alertes et données sont connectés dans une même logique numérique intégrée." },
 ];
 
 const valeurs = [
@@ -35,10 +35,10 @@ export default function APropos() {
             À propos
           </div>
           <h1 className="font-black mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "white", lineHeight: 1.15, maxWidth: "760px" }}>
-            APS Québec, propulsé par Vaistat
+            APS Québec — Agents de Proximité en Santé
           </h1>
           <p className="text-lg" style={{ color: "rgba(255,255,255,0.8)", maxWidth: "680px", lineHeight: 1.7 }}>
-            Le bras opérationnel de proximité propulsé par la technologie Vaistat. Notre mission est simple : reconstruire un pont humain entre les patients et le système de santé.
+            Le bras opérationnel de proximité au service du réseau de santé québécois. Notre mission est simple : reconstruire un pont humain entre les patients et le système de santé.
           </p>
         </div>
       </section>
@@ -50,7 +50,7 @@ export default function APropos() {
             <div className="relative">
               <div className="absolute -bottom-3 -left-3 w-full h-full rounded-2xl" style={{ border: "2px solid #F26419", opacity: 0.25 }} />
               <div className="relative rounded-2xl overflow-hidden" style={{ boxShadow: "0 20px 56px rgba(26,63,122,0.16)" }}>
-                <img src={IMG.about} alt="Équipe APS Québec" className="w-full object-cover" style={{ height: "460px" }} />
+                <img src="/headerAPS.jpeg" alt="APS Québec — Agents de Proximité en Santé" className="w-full object-cover" style={{ height: "460px", objectPosition: "center top" }} />
               </div>
             </div>
             <div>
@@ -60,7 +60,7 @@ export default function APropos() {
                 Nous croyons que l'avenir des soins combinera la technologie, les données, la traçabilité et l'intelligence opérationnelle avec une présence humaine capable de rassurer, accompagner, observer et agir.
               </p>
               <p className="text-base leading-relaxed" style={{ color: "#4A6670" }}>
-                Vaistat est une entreprise technologique québécoise spécialisée dans la logistique pharmaceutique intelligente, la coordination numérique en santé et les plateformes intégrées. Le modèle APS Québec permet d'étendre cette expertise à des services à plus forte valeur : décharge hospitalière, accompagnement, logistique médicale, prélèvements, monitoring et continuité visible pour les familles.
+                APS Québec s'appuie sur une plateforme numérique de coordination en santé spécialisée dans la logistique pharmaceutique intelligente et la coordination numérique. Ce modèle permet de déployer des services à forte valeur humaine : décharge hospitalière, accompagnement, logistique médicale, prélèvements, monitoring et continuité visible pour les familles.
               </p>
             </div>
           </div>

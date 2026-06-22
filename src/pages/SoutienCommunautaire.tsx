@@ -152,7 +152,7 @@ export default function SoutienCommunautaire() {
             </div>
             <div className="relative">
               <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 24px 60px rgba(0,0,0,0.3)" }}>
-                <img src={IMG.about} alt="Accompagnement et participation sociale APS Québec" className="w-full object-cover" style={{ height: "380px" }} />
+                <img src="/headerAPS.jpeg" alt="APS Québec — Accompagnement et participation sociale" className="w-full object-cover" style={{ height: "380px", objectPosition: "center top" }} />
               </div>
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function SoutienCommunautaire() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 20px 56px rgba(26,63,122,0.16)" }}>
-              <img src={IMG.serviceDecharge} alt="Sorties récréatives et accompagnement" className="w-full object-cover" style={{ height: "400px" }} />
+              <img src="/headerAPS.jpeg" alt="Sorties récréatives et accompagnement APS Québec" className="w-full object-cover" style={{ height: "400px", objectPosition: "center 30%" }} />
             </div>
             <div>
               <div className="aps-section-label mb-3">Sorties récréatives & communautaires</div>

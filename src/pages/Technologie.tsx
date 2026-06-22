@@ -43,13 +43,13 @@ export default function Technologie() {
       <section style={{ background: "linear-gradient(135deg, #0D1E3F 0%, #1A3F7A 100%)", paddingTop: "7rem", paddingBottom: "3.5rem" }}>
         <div className="container">
           <div className="aps-badge mb-4" style={{ background: "rgba(59,191,184,0.15)", color: "#3BBFB8", border: "1px solid rgba(59,191,184,0.3)" }}>
-            Propulsé par Vaistat
+            Technologie
           </div>
           <h1 className="font-black mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "white", lineHeight: 1.15, maxWidth: "820px" }}>
             La technologie qui rend la proximité opérable à grande échelle
           </h1>
           <p className="text-lg" style={{ color: "rgba(255,255,255,0.8)", maxWidth: "680px", lineHeight: 1.7 }}>
-            APS Québec est l'infrastructure humaine. Vaistat est l'épine dorsale technologique. Ensemble, ils permettent de coordonner, suivre, documenter et mesurer les missions terrain.
+            APS Québec est l'infrastructure humaine. La plateforme numérique est l'épine dorsale technologique. Ensemble, ils permettent de coordonner, suivre, documenter et mesurer les missions terrain.
           </p>
         </div>
       </section>
@@ -58,10 +58,10 @@ export default function Technologie() {
       <section className="aps-section">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <div className="aps-section-label mb-3">La plateforme Vaistat 2.0</div>
+            <div className="aps-section-label mb-3">La plateforme APS Connect</div>
             <h2 className="aps-section-title mb-4">Une seule logique opérationnelle, <span>plusieurs interfaces</span></h2>
             <p className="text-base" style={{ color: "#5A7A82" }}>
-              La plateforme Vaistat 2.0 soutient plusieurs interfaces : application patient, application APS, portail pharmacie, portails partenaires, tableaux de bord, preuve d'exécution, rapports et intégrations.
+              La plateforme numérique APS soutient plusieurs interfaces : application patient, application APS, portail pharmacie, portails partenaires, tableaux de bord, preuve d'exécution, rapports et intégrations.
             </p>
           </div>
 

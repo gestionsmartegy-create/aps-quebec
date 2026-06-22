@@ -38,54 +38,47 @@ function useCounter(target: number, duration = 1800) {
 // ─── HERO ────────────────────────────────────────────────────
 function HeroSection() {
   return (
-    <section style={{ background: "#FAFAF8" }}>
-      {/* Bannière APS Québec pleine largeur */}
-      <div style={{ paddingTop: "4rem", position: "relative" }}>
+    <section style={{ background: "#0D1E3F" }}>
+      {/* Bannière hero — pleine largeur, avec overlay gradient pour lisibilité du texte */}
+      <div style={{ paddingTop: "4rem", position: "relative", overflow: "hidden" }}>
         <img
           src="/headerAPS.jpeg"
           alt="APS Québec — Agent de Proximité en Santé"
           className="w-full object-cover"
-          style={{ height: "clamp(280px, 46vw, 620px)", objectPosition: "center", display: "block" }}
+          style={{ height: "clamp(320px, 52vw, 680px)", objectPosition: "center top", display: "block" }}
         />
-      </div>
+        {/* Gradient overlay bas — laisse place au texte */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 35%, rgba(13,30,63,0.72) 70%, #0D1E3F 100%)" }} />
 
-      {/* Bande accroche + CTA */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{
-          backgroundImage: "linear-gradient(#1A3F7A0A 1px, transparent 1px), linear-gradient(90deg, #1A3F7A0A 1px, transparent 1px)",
-          backgroundSize: "44px 44px", maskImage: "linear-gradient(to bottom, black, transparent 80%)",
-        }} />
-        <div className="container relative z-10" style={{ paddingTop: "2.75rem", paddingBottom: "2.75rem" }}>
-          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-center">
+        {/* Texte hero par-dessus la bannière */}
+        <div className="absolute inset-x-0 bottom-0 container" style={{ paddingBottom: "2.5rem" }}>
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-end">
             <div>
-              <div className="inline-flex items-center mb-5 px-3 py-1.5 rounded-full" style={{ background: "#FFF1EA", border: "1px solid rgba(242,100,25,0.25)" }}>
-                <span style={{ fontSize: "0.72rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#D5500D" }}>Propulsé par Vaistat</span>
-              </div>
-              <h1 className="font-black mb-5" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(1.9rem, 3.6vw, 2.9rem)", color: "#1A2E35", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
-                Le pont <span style={{ color: "#0EA5AA" }}>humain</span> et <span style={{ color: "#1A3F7A" }}>technologique</span> entre le patient et le système de santé
+              <h1 className="font-black mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)", color: "white", lineHeight: 1.1, letterSpacing: "-0.02em", textShadow: "0 2px 12px rgba(0,0,0,0.3)" }}>
+                Le pont <span style={{ color: "#3BBFB8" }}>humain</span> et <span style={{ color: "#F26419" }}>technologique</span> entre le patient et le système de santé
               </h1>
-              <p className="text-lg leading-relaxed" style={{ color: "#4A6670", maxWidth: "620px" }}>
-                APS Québec déploie des <strong>Agents de Proximité en Santé</strong> formés pour soutenir la continuité des soins : décharge hospitalière, accompagnement médical, livraison de médicaments, prélèvements, visites de suivi et monitoring connecté.
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.82)", maxWidth: "580px" }}>
+                APS Québec déploie des <strong style={{ color: "white" }}>Agents de Proximité en Santé</strong> formés pour soutenir la continuité des soins : décharge hospitalière, accompagnement médical, livraison de médicaments, prélèvements, visites de suivi et monitoring connecté.
               </p>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 lg:items-end">
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="aps-btn-orange no-underline">
                   Demander une rencontre <ArrowRight size={16} />
                 </Link>
-                <Link href="/services" className="aps-btn-outline no-underline">
-                  Découvrir nos services
+                <Link href="/services" className="no-underline" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.75rem 1.4rem", background: "rgba(255,255,255,0.12)", color: "white", border: "1px solid rgba(255,255,255,0.3)", borderRadius: "0.625rem", fontWeight: 700, fontSize: "0.9rem" }}>
+                  Nos services
                 </Link>
               </div>
-              <div className="flex flex-wrap items-center gap-x-7 gap-y-3 pt-5" style={{ borderTop: "1px solid #E0EAF4" }}>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}>
                 {[
                   { k: "Missions", v: "Documentées & traçables" },
                   { k: "Couverture", v: "Domicile · Pharmacie · Résidence" },
                   { k: "Rôle", v: "Non clinique, essentiel" },
                 ].map((x) => (
                   <div key={x.k}>
-                    <div style={{ fontSize: "0.6rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#9BAFB5" }}>{x.k}</div>
-                    <div style={{ fontSize: "0.8rem", fontWeight: 600, color: "#1A3F7A" }}>{x.v}</div>
+                    <div style={{ fontSize: "0.58rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)" }}>{x.k}</div>
+                    <div style={{ fontSize: "0.78rem", fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>{x.v}</div>
                   </div>
                 ))}
               </div>
@@ -176,7 +169,7 @@ function ProblemSection() {
 const piliers = [
   { icon: MapPin, title: "Proximité", desc: "Des agents formés interviennent là où le parcours patient se vit réellement : domicile, pharmacie, hôpital, résidence, rendez-vous et communauté." },
   { icon: Network, title: "Coordination", desc: "Chaque mission est structurée, assignée, documentée et suivie. APS Québec agit comme une couche opérationnelle entre les partenaires de soins." },
-  { icon: RefreshCw, title: "Continuité", desc: "Grâce à Vaistat, missions, suivis, traçabilité, preuves d'exécution, alertes et visibilité partenaire sont connectés dans une même logique." },
+  { icon: RefreshCw, title: "Continuité", desc: "Missions, suivis, traçabilité, preuves d'exécution, alertes et visibilité partenaire sont connectés dans une même logique numérique." },
 ];
 
 function SolutionSection() {
@@ -190,7 +183,7 @@ function SolutionSection() {
               <img src={IMG.about} alt="Équipe d'agents de proximité en santé" className="w-full object-cover" style={{ height: "440px" }} />
             </div>
             <div className="absolute -bottom-5 -right-5 px-5 py-4 rounded-xl" style={{ background: "#F26419", boxShadow: "0 12px 28px rgba(242,100,25,0.32)" }}>
-              <div className="font-black text-white" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", lineHeight: 1.2 }}>Agents formés<br />+ protocoles<br />+ Vaistat</div>
+              <div className="font-black text-white" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", lineHeight: 1.2 }}>Agents formés<br />+ protocoles<br />+ technologie</div>
             </div>
           </div>
 
@@ -332,7 +325,7 @@ function TechSection() {
             <div className="aps-section-label mb-4">05 — Technologie</div>
             <h2 className="aps-section-title mb-4">La technologie qui rend la proximité <span>opérable à grande échelle</span></h2>
             <p className="text-base leading-relaxed mb-6" style={{ color: "#4A6670" }}>
-              APS Québec est l'infrastructure humaine. Vaistat est l'épine dorsale technologique. La plateforme Vaistat 2.0 soutient plusieurs interfaces : application patient, application APS, portails, tableaux de bord, preuve d'exécution et intégrations.
+              APS Québec est l'infrastructure humaine. La plateforme numérique en est l'épine dorsale technologique. Elle soutient plusieurs interfaces : application patient, application APS, portails, tableaux de bord, preuve d'exécution et intégrations.
             </p>
             <div className="grid sm:grid-cols-2 gap-3 mb-8">
               {techItems.map((item, i) => (
@@ -353,7 +346,7 @@ function TechSection() {
           <div className="relative">
             <div className="absolute -top-3 -left-3 w-full h-full rounded-2xl" style={{ border: "2px solid #F26419", opacity: 0.25 }} />
             <div className="relative rounded-2xl overflow-hidden" style={{ boxShadow: "0 20px 56px rgba(26,63,122,0.18)" }}>
-              <img src={IMG.tech} alt="Plateforme technologique Vaistat" className="w-full object-cover" style={{ height: "500px" }} />
+              <img src={IMG.tech} alt="Plateforme technologique APS Québec" className="w-full object-cover" style={{ height: "500px" }} />
             </div>
           </div>
         </div>
@@ -457,7 +450,7 @@ function CommunautaireSection() {
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 20px 56px rgba(26,63,122,0.16)" }}>
-              <img src={IMG.about} alt="Accompagnement et participation sociale APS Québec" className="w-full object-cover" style={{ height: "440px" }} />
+              <img src="/headerAPS.jpeg" alt="APS Québec — RI RTF RPA soutien communautaire" className="w-full object-cover" style={{ height: "440px", objectPosition: "center top" }} />
             </div>
             <div className="absolute -top-4 -left-4 px-4 py-2 rounded-xl" style={{ background: "#F26419", boxShadow: "0 10px 24px rgba(242,100,25,0.3)" }}>
               <span className="font-black text-white text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>RI · RTF · RPA</span>
