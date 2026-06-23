@@ -5,7 +5,7 @@ import { CheckCircle2, ArrowRight, ArrowLeft, Send, Star } from "lucide-react";
 
 /* ============================================================
    DEVENIR PARTENAIRE — APS Québec
-   Formules + Formulaire Netlify → info@vaistat.com
+   Formules + Formulaire Netlify → infos@aps-qc.ca
    ============================================================ */
 
 const formules = [

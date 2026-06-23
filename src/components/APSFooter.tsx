@@ -227,7 +227,7 @@ export default function APSFooter() {
             <div style={{ display: "flex", flexDirection: "column" as const, gap: "0.875rem" }}>
               {[
                 { Icon: Phone, text: "+1-866-824-7828", href: "tel:+18668247828" },
-                { Icon: Mail,  text: "info@aps-qc.ca",  href: "mailto:info@aps-qc.ca" },
+                { Icon: Mail,  text: "infos@aps-qc.ca",  href: "mailto:infos@aps-qc.ca" },
                 { Icon: MapPin, text: "Montréal, Québec", href: undefined },
                 { Icon: Clock,  text: "Lun–Sam : 8h–17h", href: undefined },
               ].map(({ Icon, text, href }, i) => (

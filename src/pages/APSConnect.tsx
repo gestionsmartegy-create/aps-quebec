@@ -11,7 +11,7 @@ import { submitForm } from "@/lib/submitForm";
 /* ============================================================
    APS CONNECT — Portail intégré (écrans natifs)
    Connexion + création de compte par espace.
-   Inscription → Web3Forms → info@vaistat.com
+   Inscription → Web3Forms → infos@aps-qc.ca
    ============================================================ */
 
 const espaces = [

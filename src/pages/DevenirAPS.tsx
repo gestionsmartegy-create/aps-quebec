@@ -12,7 +12,7 @@ import { submitForm } from "@/lib/submitForm";
 
 /* ============================================================
    PAGE DEVENIR APS — Recrutement d'agents
-   Web3Forms → info@vaistat.com
+   Web3Forms → infos@aps-qc.ca
    ============================================================ */
 
 const profil = [

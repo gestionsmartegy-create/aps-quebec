@@ -6,7 +6,7 @@ import { CheckCircle2, ArrowLeft, Send, Phone, Mail, MapPin, Clock } from "lucid
 import { submitForm } from "@/lib/submitForm";
 
 /* ============================================================
-   PAGE CONTACT — Web3Forms → info@vaistat.com
+   PAGE CONTACT — Web3Forms → infos@aps-qc.ca
    ============================================================ */
 
 const sujets = [
@@ -174,7 +174,7 @@ export default function Contact() {
             <div className="flex flex-col gap-4">
               {[
                 { Icon: Phone, label: "Téléphone", value: "1-866-824-7828", href: "tel:+18668247828" },
-                { Icon: Mail, label: "Courriel", value: "info@aps-qc.ca", href: "mailto:info@aps-qc.ca" },
+                { Icon: Mail, label: "Courriel", value: "infos@aps-qc.ca", href: "mailto:infos@aps-qc.ca" },
                 { Icon: MapPin, label: "Région", value: "Montréal, Québec", href: undefined },
                 { Icon: Clock, label: "Heures", value: "Lun – Sam : 8h – 17h", href: undefined },
               ].map(({ Icon, label, value, href }, i) => (

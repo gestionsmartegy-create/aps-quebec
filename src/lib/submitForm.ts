@@ -4,7 +4,7 @@
 
    SETUP :
    1. Va sur https://web3forms.com
-   2. Entre info@vaistat.com → reçois ta clé par email
+   2. Entre infos@aps-qc.ca → reçois ta clé par email
    3. Remplace YOUR_ACCESS_KEY_HERE par la vraie clé
 
    La clé est publique (elle identifie l'adresse destinataire,
